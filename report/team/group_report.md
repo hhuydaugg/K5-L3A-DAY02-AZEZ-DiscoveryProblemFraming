@@ -143,39 +143,76 @@ Tổng hợp:
 
 ### 4.1. Quy trình hiện tại
 
-Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
+Số phút từng bước lấy từ phỏng vấn điều phối viên vận hành GSM (card #1 trong báo cáo cá nhân của Trần Thanh Tùng). Tần suất: 3–4 ca xe cạn pin khẩn cấp trong một ca trực giờ cao điểm.
 
-```text
-
+```mermaid
+flowchart LR
+  A["1. Nghe cuộc gọi khẩn của tài xế<br/>2'"] --> B["2. Tra GPS và % pin<br/>trên màn hình quản lý xe<br/>2'"]
+  B --> C["3. Mở app bản đồ trạm sạc,<br/>đo km, tìm trạm còn trụ trống<br/>5–6'"]
+  C --> D["4. Gõ tay tin nhắn chỉ dẫn<br/>và lưu ý an toàn<br/>3–4'"]
+  D --> E["5. Gửi SMS hoặc gọi lại,<br/>theo dõi xe<br/>2'"]
+  style C fill:#f8d7da,stroke:#c0392b
+  style D fill:#fdebd0,stroke:#e67e22
 ```
 
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú |
 |---:|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | Điều phối viên | Cuộc gọi khẩn của tài xế (biển số, mô tả vị trí, mức pin) | Sự cố được ghi nhận | 2' | Handoff: tài xế → điều phối viên |
+| 2 | Điều phối viên | Biển số xe | Tọa độ GPS, % pin, dòng xe | 2' | Màn hình quản lý xe (hệ thống 1) |
+| 3 | Điều phối viên | Tọa độ, % pin, dòng xe | 1 trạm sạc đích còn trụ trống | 5–6' | **Bottleneck chính**: chuyển qua lại giữa màn hình quản lý xe và app bản đồ trạm sạc (hệ thống 2) |
+| 4 | Điều phối viên | Trạm đích, dòng xe, % pin | Tin nhắn chỉ dẫn (địa chỉ trạm, tắt điều hòa, đi chậm) | 3–4' | Bottleneck phụ: gõ tay, dễ sót thông tin |
+| 5 | Điều phối viên → tài xế | Tin nhắn chỉ dẫn | Tài xế nhận chỉ dẫn, xe được theo dõi trên màn hình | 2' | Handoff: điều phối viên → tài xế |
 
-**Bottleneck chính:**
+Tổng: 5 bước, 14–17 phút mỗi ca, 5/5 bước thủ công.
+
+**Bottleneck chính:** Bước 3, tra trạm sạc còn trụ trống (5–6 phút), vì điều phối viên phải đối chiếu thủ công giữa 2 hệ thống. Bước 4, gõ tay tin nhắn chỉ dẫn (3–4 phút), là bottleneck phụ.
 
 ### 4.2. Quy trình tương lai
 
-Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người**, **boundary** ở đâu, **phương án quay về** khi AI sai.
+*Bản nháp để nhóm thảo luận. Số phút ở quy trình tương lai là ước tính, sẽ đo lại khi pilot.*
 
-```text
-
+```mermaid
+flowchart LR
+  A["1. Nghe cuộc gọi, mở ticket<br/>CON NGƯỜI · 2'"] --> B["2. Tự lấy GPS, % pin, dòng xe<br/>theo biển số<br/>RULE · ~0'"]
+  B --> C["3. Lọc 1 trạm chính + 1 trạm dự phòng:<br/>gần nhất, còn trụ, đúng loại cổng,<br/>trong tầm pin còn lại<br/>RULE · ~0,5'"]
+  C --> D["4. Soạn nháp tin chỉ dẫn<br/>RULE (template) hoặc AI<br/>~0,5'"]
+  D --> E["5. Kiểm trạm và tin nhắn,<br/>sửa nếu cần, bấm gửi<br/>CON NGƯỜI · 1'"]
+  E --> F["6. Theo dõi xe<br/>CON NGƯỜI · 1'"]
+  F -- "Tới nơi hết trụ" --> G["Chuyển sang trạm dự phòng"]
+  F -- "Pin không đủ tới trạm" --> H["Gọi cứu hộ sạc lưu động<br/>VinFast 1900 23 23 89"]
+  style E fill:#d4edda,stroke:#27ae60
 ```
+
+| Bước | Ai làm | Ghi chú |
+|---:|---|---|
+| 1 | Con người | Điều phối viên vẫn là người nghe tài xế và đánh giá mức độ khẩn |
+| 2 | Rule | Tra cứu theo biển số, không cần AI |
+| 3 | Rule | Lọc theo khoảng cách, trạng thái trụ, loại cổng sạc, quãng đường còn đi được; luôn trả về 1 trạm chính + 1 trạm dự phòng |
+| 4 | Rule hoặc AI | Template có chỗ điền sẵn có thể đã đủ; nhóm quyết định ở CP6 có cần AI hay không |
+| 5 | Con người | **Bước kiểm tra (HITL)**: điều phối viên duyệt trước khi tin nhắn đến tài xế |
+| 6 | Con người | Theo dõi xe đến khi cắm được sạc |
+
+**Boundary:**
+
+- Hệ thống không tự gửi tin nhắn cho tài xế; chỉ điều phối viên được bấm gửi.
+- Hệ thống không tự gọi cứu hộ và không đưa trạm nằm ngoài danh sách trạm Xanh SM cho phép.
+- Tin nhắn chỉ dẫn chỉ dùng thông tin từ dữ liệu xe và trạm; không thêm chỉ dẫn kỹ thuật ngoài danh sách lưu ý an toàn đã duyệt.
+
+**Phương án quay về:**
+
+- Dữ liệu trạm sai hoặc hệ thống lỗi → điều phối viên quay về quy trình thủ công hiện tại (tra app bản đồ trạm sạc, gõ tin theo template giấy).
+- Xe tới nơi mà trạm hết trụ → chuyển ngay sang trạm dự phòng đã có trong tin nhắn.
+- Pin không đủ để tới trạm nào → gọi dịch vụ cứu hộ sạc lưu động của VinFast (xem mục 3.3).
 
 ### 4.3. Before / after
 
 | Chỉ số | Trước | Sau (kỳ vọng) | Ghi chú |
 |---|---:|---:|---|
-| Số bước | | | |
-| Tổng thời gian | | | |
-| Số bước thủ công | | | |
-| Bottleneck chính | | | |
-| Rủi ro mới phát sinh | | | |
+| Số bước | 5 | 6 | Thêm bước 5 kiểm tra và bước 6 theo dõi tách riêng |
+| Tổng thời gian | 14–17' | khoảng 5' | Target của card #10: dưới 5 phút mỗi ca |
+| Số bước thủ công | 5/5 | 3/6 | Con người vẫn nghe máy, duyệt tin nhắn và theo dõi xe |
+| Bottleneck chính | Tra trạm còn trụ trống (5–6') | Điều phối viên kiểm và gửi (1') | Bottleneck mới chấp nhận được vì đây là điểm kiểm soát an toàn |
+| Rủi ro mới phát sinh | — | Trạng thái trụ bị trễ, xe tới nơi thì hết trụ; tin nhắn sai loại cổng sạc; điều phối viên tin máy và duyệt lướt | Xử lý bằng trạm dự phòng, boundary và tiêu chí đánh giá ở CP6 |
 
 ---
 
