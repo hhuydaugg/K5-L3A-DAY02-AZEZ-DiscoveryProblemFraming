@@ -1,15 +1,12 @@
-# Báo cáo cá nhân — MSSV_HoTen
+# Báo cáo cá nhân — 2A202603411_NguyenVietHung
 
-> Đổi tên file theo quy tắc `MSSV_HoTen.md`, ví dụ `20241234_NguyenVanAn.md` (MSSV trước, dấu `_`, họ tên viết liền không dấu). Sửa cả dòng tiêu đề phía trên cho khớp.
-> Template chi tiết và prompt mẫu cho từng mục: [docs/01-worksheet.md](../../docs/01-worksheet.md).
-> Mỗi thành viên một file trong `report/individual/` trên repo nhóm: copy template này thành file mới, điền, rồi commit bằng tài khoản GitHub của bạn. Không viết hộ người khác.
 
 ## 1. Thông tin học viên
 
 - Họ tên: Nguyễn Việt Hưng
 - MSSV: 2A202603411
 - Email trường (không bắt buộc, repo có thể để public):
-- Tên nhóm: AEZE
+- Tên nhóm: AZEZ
 - Link repo nhóm: https://github.com/hhuydaugg/K5-L3A-DAY02-AZEZ-DiscoveryProblemFraming.git
 
 ---
@@ -31,7 +28,8 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 **Nếu có dùng AI để gợi ý thêm:** ý nào AI gợi ý mà bạn giữ lại, ý nào bỏ và vì sao.
 
--
+- **Ý giữ lại:** AI gợi ý ý tưởng Ambient AI Scribe hỗ trợ bác sĩ ghi nhận hồ sơ bệnh án tự động bằng Speech-to-Text kết hợp NLP, vì có số liệu nghiên cứu công bố thực tế từ JAMIA 2025 chứng minh giúp giảm thời gian documentation.
+- **Ý bỏ:** AI gợi ý ý tưởng dùng AI tự động chẩn đoán bệnh từ hình ảnh y khoa, tôi bỏ vì bài toán chẩn đoán có rủi ro an toàn và trách nhiệm y tế rất cao, vượt quá phạm vi và mục tiêu kiểm chứng quy trình vận hành của bài lab.
 
 ---
 
@@ -117,16 +115,16 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | | |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt | 1. Nếu có nhiều tài xế ở gần nhau và đều được điều hướng đến cùng 1 trạm thì có ý tưởng nào để khắc phục tình trạng này không? 2. Nếu VinWonders đã có hệ thống thông báo bảo trì hoặc tạm dừng trò chơi trên ứng dụng, website và tại cổng vào, vậy nguyên nhân thực sự khiến du khách vẫn không nhận được thông tin là gì? Vấn đề nằm ở thiếu dữ liệu hay cách truyền tải thông tin chưa hiệu quả? 3. Nếu tài xế đang nghỉ ngơi và không chủ động theo dõi điện thoại, việc gửi thông báo khi xe sạc đầy có đảm bảo họ rời trạm trong vòng 10 phút không? Ngoài thông báo, cần có cơ chế nào để hạn chế tình trạng tài xế tiếp tục chiếm dụng trụ sạc?|
+| Pitch Problem Card | Thảo luận và trình bày 3 card cá nhân (AI Scribe y tế, Tiếp nhận và đặt lịch khám, Medication Reminder); phân tích các đề tài của các bạn trong nhóm -> Cả nhóm thảo luận và thống nhất nghiên cứu về đề tài hỗ trợ điều phối xe taxi điện cạn pin khẩn cấp dưới 5% | Nhóm chọn candidate #10 của Tùng làm candidate problem chung cho cả nhóm |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt cho Nguyễn Hoàng Huy: 1. Nếu có nhiều tài xế ở gần nhau và đều được điều hướng đến cùng 1 trạm thì có ý tưởng nào để khắc phục tình trạng này không? 2. Nếu VinWonders đã có hệ thống thông báo bảo trì hoặc tạm dừng trò chơi trên ứng dụng, website và tại cổng vào, vậy nguyên nhân thực sự khiến du khách vẫn không nhận được thông tin là gì? Vấn đề nằm ở thiếu dữ liệu hay cách truyền tải thông tin chưa hiệu quả? 3. Nếu tài xế đang nghỉ ngơi và không chủ động theo dõi điện thoại, việc gửi thông báo khi xe sạc đầy có đảm bảo họ rời trạm trong vòng 10 phút không? Ngoài thông báo, cần có cơ chế nào để hạn chế tình trạng tài xế tiếp tục chiếm dụng trụ sạc? | Giúp Huy nhận ra cần tách biệt actor và kiểm chứng giả định tài xế đồng thời dồn về 1 trạm; đưa câu hỏi dồn xe vào danh mục xử lý ở hướng tiếp theo của nhóm |
 | Nhận phản biện | Câu hỏi tôi nhận được: 1. Bệnh án y khoa đòi hỏi độ chính xác tuyệt đối, nếu AI nghe nhầm triệu chứng hoặc bịa liều thuốc (ảo giác) thì bác sĩ soát lại có mất thời gian hơn tự gõ không, và rủi ro pháp lý ai chịu trách nhiệm? 2. Triệu chứng bệnh nhân tự mô tả thường rất mơ hồ (như đau bụng, sốt), nếu AI phân luồng sai chuyên khoa khiến bệnh nhân khám nhầm phòng và trễ điều trị thì xử lý rủi ro an toàn này thế nào? 3. Việc nhắc giờ uống thuốc hiện các app lịch hoặc báo thức điện thoại chỉ cần cài đặt giờ cố định (Rule) là xong, bài này thật sự cần đến AI ở bước nào hay chỉ cần đồng hồ hẹn giờ? | Tôi đã sửa gì: 1. Đây là rủi ro có thật. Không thể mặc định rằng AI giúp tiết kiệm thời gian chỉ vì nó tạo được văn bản nhanh hơn. Điểm quan trọng là AI chỉ ghi nhận những thông tin thực sự xuất hiện trong hội thoại hoặc được cung cấp từ nguồn dữ liệu hợp lệ. AI không được tự suy luận để điền triệu chứng, chẩn đoán hay liều thuốc còn thiếu và AI hỗ trợ bác sĩ trong việc rút ngắn thời gian hoàn thành hồ sơ bệnh án còn trách nhiệm cao nhất vẫn thuộc về y bác sĩ. 2. Bổ sung thêm: AI hỏi thêm các thông tin cơ bản theo bộ câu hỏi đã được đội ngũ y tế phê duyệt: vị trí đau, thời gian xuất hiện, mức độ đau, triệu chứng đi kèm. Sau khi nhận được câu trả lời chi tiết từ bệnh nhân, AI sẽ đưa ra thông báo tiếp nhận bệnh nhân cho chuyên khoa để xác nhận. 3. Trong bài toán này, AI không chỉ hỗ trợ nhắc nhở bệnh nhân uống thuốc, AI giúp bệnh nhân nắm rõ thông tin từng loại thuốc và tracking quá trình sử dụng thuốc để bác sĩ có thể nắm bắt được tình trạng chữa trị của bệnh nhân |
-| Gom cluster / cây OST | | |
-| Chọn candidate problem | | |
-| Kiểm chứng / research | | |
-| Quy trình nhóm | | |
-| Problem Statement | | |
-| Mức can thiệp AI | | |
-| Quyết định | | |
+| Gom cluster / cây OST | Tham gia thảo luận để phân nhóm các chủ đề, góp ý gom 12 candidate thành 4 cluster theo domain (Vận hành GSM / Taxi điện, Y tế Vinmec, CSKH Xanh SM, Trải nghiệm giải trí VinWonders) và xây dựng Opportunity Solution Tree | Nhóm chia được 4 cluster (A–D) và gạch bỏ các ý tưởng "solution đội lốt opportunity" như Chatbot tư vấn, Agent tự điều hướng (mục 2.2 và 2.3 báo cáo nhóm) |
+| Chọn candidate problem | Cùng cả nhóm tham gia chấm điểm shortlist (1–5) theo 7 tiêu chí trong rubric; phân tích đối chiếu tính khả thi và bằng chứng giữa các đề tài | Nhóm thống nhất chọn candidate #10 (Hỗ trợ điều phối viên GSM tra cứu trạm sạc cho taxi điện cạn pin < 5%) với 34/35 điểm vì actor rõ và thời gian đo lường cụ thể |
+| Kiểm chứng / research | Cùng Công Tĩnh phụ trách chính CP4: xây dựng Assumption Map (6 giả định) và thực hiện research các giải pháp tương tự đã có trên thị trường (V-App Green SM, cứu hộ pin VinFast 24/7, cơ chế hiển thị trụ trống của Google Maps) | Phát hiện V-App đã có tính năng gợi ý trạm sạc cho tài xế, chỉ ra giả định #1 (tài xế gọi về tổng đài) là rủi ro Value lớn nhất; hoàn thành bảng 3.1 và 3.3 trong báo cáo nhóm |
+| Quy trình nhóm | Cùng nhóm rà soát quy trình hiện tại (5 bước, 14–17 phút) và đóng góp xây dựng quy trình tương lai (3 bước, ~5 phút); phản biện yêu cầu Human-in-the-loop đối chiếu cổng sạc xe trước khi gửi tin | Xác định rõ 2 bottleneck tại bước 3 (tra trạm 5–6 phút) và bước 4 (gõ tin 3–4 phút); chốt quy trình tương lai có boundary an toàn và phương án quay về (mục 4 báo cáo nhóm) |
+| Problem Statement | Tham gia góp ý hoàn thiện Problem Statement v0 và v1; rà soát đối chiếu các trường Actor, Bottleneck, Impact, Success Metric và Boundary theo rubric | Nhóm hoàn thiện Problem Statement v1 (mục 7 báo cáo nhóm), loại bỏ giải pháp lọt vào metric ("≤ 1 phút"), chốt metric kết quả là tỷ lệ xe tới trạm sạc an toàn |
+| Mức can thiệp AI | Tham gia thảo luận ma trận độ mơ hồ × độ phức tạp; đối chiếu 4 mức can thiệp (No AI, Rule, Workflow, Agent) để chọn phương án tối ưu | Nhóm thống nhất chọn mức Rule (dùng hệ thống lọc trạm theo điều kiện cứng và template tin nhắn chuẩn), không dùng AI tạo sinh để tránh rủi ro an toàn vận hành |
+| Quyết định | Tham gia đánh giá 4 rủi ro (Value, Usability, Feasibility, Viability) và thảo luận ngưỡng dừng pilot cùng cả nhóm | Nhóm đồng thuận ra quyết định "Not Yet" (chưa Go) vì giả định cốt lõi chưa đủ bằng chứng đại diện; chốt kế hoạch kiểm chứng 5 tài xế trước khi triển khai |
 
 ---
 
@@ -134,12 +132,12 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
-| CP2 Problem Card | | | | |
-| CP4 Research | | | | |
-| CP5 Quy trình | | | | |
-| CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
+| CP1 Scan | Tìm kiếm tài liệu nghiên cứu công bố về các vấn đề trong y tế để làm dấu hiệu thật cho 4 Job Story | Tìm được các nguồn nghiên cứu quốc tế và trong nước có số liệu cụ thể: JAMIA 2025 (Ambient AI Scribe), khảo sát 127 bệnh nhân tại BV Y học gia đình Huế, thời gian đăng ký tại Ấn Độ | Một số trích dẫn bài báo chung chung, chưa nêu rõ cỡ mẫu và bối cảnh nghiên cứu | Tự kiểm tra lại bài báo gốc, bổ sung chính xác thông tin địa điểm nghiên cứu, số lượng đối tượng tham gia và số phút/tỷ lệ phần trăm đo được |
+| CP2 Problem Card | Đóng vai "PM hoài nghi" phản biện 3 Problem Card cá nhân và quy trình nháp | Bóc tách đúng điểm yếu: rủi ro AI ảo giác liều thuốc ở Card 1, phân luồng sai khoa ở Card 2, và việc Card 3 (nhắc thuốc) thực chất chỉ cần rule-based chứ không cần AI | Đề xuất giải pháp cực đoan: hoặc bỏ hẳn Card 1, hoặc tự động hóa hoàn toàn Card 2 bằng Agent | Giữ lại các card nhưng đặt boundary nghiêm ngặt: AI chỉ ghi nhận thông tin và soạn nháp, bác sĩ/nhân viên y tế bắt buộc phải kiểm tra và xác nhận cuối cùng |
+| CP4 Research | Tra cứu các bài viết và tài liệu kỹ thuật về giải pháp sạc xe điện (tính năng V-App, Google Maps EV, cứu hộ sạc lưu động VinFast) | Gợi ý nhanh pattern dự đoán tình trạng trụ sạc của Google Maps và các thông tin công bố tính năng của Green SM | Đưa ra một số liên kết cũ đã bị lỗi (404) hoặc trang tin tức bị chặn quyền truy cập | Tự truy cập và kiểm chứng từng đường link trên trình duyệt; thay thế bằng tài liệu chính thức từ website VinFast, Green SM và các trang báo uy tín |
+| CP5 Quy trình | Kiểm tra tính logic của sơ đồ quy trình hiện tại và quy trình tương lai, phát hiện thiếu sót về fallback | Nhắc nhở bổ sung bước đối chiếu loại cổng sạc (DC/AC) tương thích với dòng xe của tài xế | Ước tính thời gian quy trình tương lai quá lạc quan (cho rằng hệ thống xử lý chỉ mất dưới 1 phút) | Cùng nhóm điều chỉnh thời gian thực tế hơn (~5 phút/ca), ghi chú rõ đây là con số ước tính cần đo lường khi pilot thực tế |
+| CP5–6 Problem Statement | Rà soát Problem Statement v0 để phát hiện giải pháp lọt vào phần mô tả bài toán | Phát hiện chỉ số "thời gian xác định trạm ≤ 1 phút" thực chất là mô tả giải pháp chứ không phải outcome | Gợi ý thêm nhiều metric phụ phức tạp không khả thi để đo lường trong phạm vi bài lab | Cùng nhóm rút gọn các trường, giữ lại các metric cốt lõi về thời gian xử lý và tỷ lệ xe tới trạm sạc an toàn |
+| CP6 Mức can thiệp / quyết định | Phản biện ma trận 4 mức can thiệp và bảng đánh giá 4 rủi ro | Chỉ ra sự bất hợp lý nếu chọn mức Agent trong khi yêu cầu nghiệp vụ bắt buộc tin nhắn chỉ được dùng nội dung cố định đã phê duyệt | AI có xu hướng thiên vị việc áp dụng công nghệ cao (Agent/Workflow) để bài toán trông ấn tượng hơn | Kiên định cùng nhóm chọn mức Rule (đáp ứng đúng và đủ nhu cầu với chi phí tối thiểu) và đồng thuận quyết định Not Yet do rủi ro Value còn cao |
 
 ---
 
@@ -161,6 +159,8 @@ Có, em đổi ý rõ nhất ở card AI Scribe (Problem 1). Trước khi bị p
 
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
 
+Điều làm tôi bất ngờ nhất đến từ khi nhóm thực hiện research giải pháp đã có ở CP4: phát hiện ứng dụng V-App của Green SM thực tế đã có tính năng gợi ý lộ trình và hiển thị tình trạng các trụ sạc theo thời gian thực cho tài xế từ tháng 5/2026. Điều này làm lung lay giả định quan trọng nhất (#1) của nhóm rằng tài xế không biết trạm nào còn trụ trống nên buộc phải gọi về cho điều phối viên. Nếu tài xế có thể tự tra cứu tình trạng trạm sạc ngay trên điện thoại trong vài giây, thì lý do thực sự khiến họ phải gọi về tổng đài khi pin dưới 5% là gì? Có phải vì hoảng loạn khi thấy xe cạn pin, vì đang lái xe trên đường không tiện thao tác điện thoại, hay thực tế là họ hiếm khi gọi tổng đài mà tự xử lý qua app? Phát hiện này khiến nhóm nhận ra rủi ro Value đang ở mức rất cao và trực tiếp dẫn đến quyết định "Not Yet" ở CP6 thay vì vội vàng quyết định "Go". Đây là bài học đắt giá cho thấy việc tìm hiểu kỹ các giải pháp và công cụ hiện có trên thị trường có thể làm thay đổi hoàn toàn tiền đề của một bài toán.
+
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
 
 Điều khó nhất là phân biệt giữa mô tả hiện tượng và xác định bottleneck thực sự. Ban đầu em viết các phần Impact và Bottleneck theo kiểu liệt kê hậu quả — ví dụ "bác sĩ mất nhiều thời gian", "bệnh nhân quên uống thuốc" — nhưng những câu này chỉ nói hiện tượng chứ không chỉ ra bước cụ thể nào trong quy trình đang gây ra vấn đề, mất bao nhiêu phút, và tại sao bước đó là nghẽn cổ chai. Khi điền vào bảng quy trình 3–7 bước và buộc phải gán bottleneck vào một bước cụ thể với con số thời gian, em mới nhận ra là mình chưa đo. Hầu hết các card đều ghi "chưa có dữ liệu tại VINMEC" — điều đó có nghĩa là problem statement vẫn là giả thuyết, chưa đủ cứng để ra quyết định. Khó nhất không phải là nghĩ ra vấn đề, mà là thành thật với bản thân rằng mình chưa có đủ bằng chứng và vẫn phải tiếp tục kiểm chứng trước khi kết luận.
@@ -171,8 +171,15 @@ Nếu làm lại, điều đầu tiên em sẽ đổi là thứ tự làm việc
 
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
 
+Vấn đề nhóm giải quyết là khi xe taxi điện Xanh SM cạn pin khẩn cấp (< 5%) trên đường đón khách và tài xế gọi về tổng đài, điều phối viên GSM mất quá nhiều thời gian để tìm trạm sạc còn trụ trống và gửi chỉ dẫn an toàn. Quy trình hiện tại gồm 5 bước thủ công kéo dài 14–17 phút, trong đó nghẽn nặng nhất ở bước tra cứu trạm sạc phù hợp (5–6 phút) và tự soạn tin nhắn chỉ dẫn (3–4 phút). Mục tiêu là rút ngắn thời gian xử lý toàn quy trình xuống dưới 5 phút, đồng thời đảm bảo 100% xe được điều hướng đến đúng loại cổng sạc và tới nơi cắm sạc thành công mà không phải gọi xe kéo cứu hộ. Ranh giới an toàn tuyệt đối là hệ thống không được tự ý gửi tin nhắn cho tài xế, không tự kích hoạt cứu hộ ngoài luồng, và điều phối viên bắt buộc phải là người rà soát cuối cùng trước khi gửi đi. Nhóm quyết định chỉ áp dụng mức Rule (hệ thống quy tắc lọc trạm theo khoảng cách, cổng sạc, trụ trống và template tin nhắn chuẩn) chứ không dùng Generative AI/Agent, nhằm đảm bảo tính chính xác tuyệt đối và loại trừ nguy cơ ảo giác trong tình huống khẩn cấp. Quyết định cuối cùng là Not Yet, vì nhóm nhận thấy giả định cốt lõi—tài xế có thực sự gọi về tổng đài hay tự tra qua V-App—chưa được kiểm chứng trên số đông tài xế thực tế và số liệu hiện tại mới chỉ thu thập từ một điều phối viên.
+
 ---
 
 ## 7. Tài liệu tham khảo
 
--
+1. Journal of the American Medical Informatics Association (JAMIA, 2025). Nghiên cứu về Ambient AI Scribe tại trung tâm y tế học thuật trong việc giảm tải thời gian ghi chép bệnh án cho bác sĩ.
+2. Bệnh viện Y học gia đình Huế (2024). Khảo sát thực trạng tuân thủ sử dụng thuốc và tỷ lệ tự ý điều chỉnh lịch dùng thuốc trên 127 bệnh nhân ngoại trú.
+3. Green SM (21/05/2026). *Ra mắt tính năng mới: Gợi ý lộ trình sạc và Danh sách phiên sạc trên ứng dụng V-App*. https://www.greensm.com/vn-vi/news/ra-mat-tinh-nang-moi-goi-y-lo-trinh-sac-va-danh-sach-phien-sac-tren-ung-dung-v-app
+4. VinFast Auto. *Chính sách hậu mãi, cứu hộ pin 24/7 qua hotline 1900 23 23 89*. https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai
+5. 9to5Google (2019) & ChannelNews (2025). *Google Maps hiển thị và dự đoán tình trạng trụ sạc xe điện theo thời gian thực*.
+6. V-Green. Trang thông tin chính sách mạng lưới trạm sạc xe điện. https://vgreen.net
