@@ -286,21 +286,27 @@ Không áp dụng vì nhóm chọn mức **Rule** (xem lý do ở mục 6.3).
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | |
-| **Quy trình** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** (baseline → target, cách đo) | |
-| **Boundary** | |
-| **AI intervention point** | |
-| **Mức chọn** | No AI / Rule / Workflow / Agent |
-| **Rủi ro & người kiểm tra** | |
+| **Actor** | Điều phối viên vận hành GSM, trong các ca tài xế Xanh SM báo pin dưới 5% và gọi về tổng đài vì không tự tìm được trạm phù hợp (kể cả khi đã có V-App). |
+| **Quy trình** | Nhận cuộc gọi khẩn → tra GPS, % pin, dòng xe trên màn hình quản lý xe → mở app bản đồ trạm sạc, đối chiếu tìm trạm còn trụ trống → gõ tay tin nhắn chỉ dẫn và lưu ý an toàn → gửi cho tài xế và theo dõi xe. Cả 5 bước đều thủ công và dùng 2 hệ thống không liên thông. |
+| **Bottleneck** | Bước tra trạm còn trụ trống mất 5–6 phút, vì phải đối chiếu thủ công giữa màn hình quản lý xe và app bản đồ trạm sạc. Bước gõ tay tin nhắn chỉ dẫn mất thêm 3–4 phút và dễ sót thông tin theo dòng xe. |
+| **Impact** | Mỗi ca mất 14–17 phút, trong đó 2 bottleneck chiếm 8–10 phút, khi xe đang ở mức pin rất thấp. Với 3–4 ca mỗi ca trực giờ cao điểm, điều phối viên mất khoảng 42–68 phút/ca trực cho các tình huống này (số liệu từ phỏng vấn 1 điều phối viên). |
+| **Success Metric** (baseline → target, cách đo) | **Metric chính:** thời gian từ lúc tiếp nhận ca đến lúc gửi chỉ dẫn đã kiểm tra, 14–17 phút → ≤ 5 phút/ca; đo bằng timestamp ticket và thời điểm gửi, báo cáo median và P90. **Metric kết quả:** tỉ lệ ca xe tới được trạm được chỉ dẫn và cắm sạc được mà không cần gọi cứu hộ; baseline lấy từ log ticket hiện tại, target là không thấp hơn baseline. |
+| **Boundary** | Hệ thống không tự gửi tin, không tự gọi cứu hộ, không đề xuất trạm ngoài danh sách Xanh SM cho phép hoặc vượt quãng đường xe còn đi được, và tin nhắn chỉ dùng lưu ý an toàn đã duyệt. 100% chỉ dẫn phải được điều phối viên kiểm tra trước khi gửi (HITL). Khi dữ liệu trạm sai hoặc hệ thống lỗi, quay về quy trình thủ công; khi xe không đủ pin tới trạm nào, gọi cứu hộ sạc lưu động. |
+| **AI intervention point** | Không dùng mô hình AI. Rule can thiệp ở 2 bước bottleneck: tự lấy GPS, % pin, dòng xe theo biển số và lọc trạm theo khoảng cách, trạng thái trụ, loại cổng, tầm pin, danh sách cho phép (bước 3); điền template tin nhắn (bước 4). Con người giữ các bước nghe máy, duyệt và gửi, theo dõi xe. |
+| **Mức chọn** | **Rule** |
+| **Rủi ro & người kiểm tra** | (1) Trạng thái trụ bị trễ, xe tới nơi thì hết trụ → tin nhắn luôn kèm trạm dự phòng, điều phối viên theo dõi đến khi xe cắm sạc. (2) Sai loại cổng hoặc sai dòng xe trong tin nhắn → điều phối viên kiểm theo tiêu chí #2 và #4 trước khi gửi. (3) Điều phối viên tin máy và duyệt lướt → trưởng ca rà soát ngẫu nhiên một số ticket mỗi tuần trong pilot. |
 
 **Thay đổi so với v0 và lý do:**
 
 | Trường | v0 | v1 | Vì sao đổi |
 |---|---|---|---|
-| | | | |
+| Actor | Ghi giả định "tài xế thường gọi điều phối khi pin < 5%" là việc cần kiểm ở CP4 | Nêu thẳng phạm vi: các ca tài xế gọi về tổng đài vì không tự tìm được trạm | Phản biện #1: CP4 đã xong, Actor không nên còn ghi chú "cần kiểm" |
+| Quy trình | Có bước "chọn trạm có thể tiếp cận và phương án dự phòng" và đoạn research về V-App | Chỉ mô tả 5 bước hiện tại, đúng như mục 4.1 | Phản biện #2 và #4: "phương án dự phòng" là giải pháp; research đã có ở mục 3.3 |
+| Bottleneck | Đoạn dài, gộp cả ghi chú về độ tin cậy số liệu | 2 câu: bottleneck chính và phụ, kèm số phút và nguyên nhân | Phản biện #5: rút gọn để đọc nhanh |
+| Impact | Đoạn dài, có câu về rủi ro chưa định lượng | 2 câu: phút mỗi ca, phút mỗi ca trực, nguồn số liệu | Phản biện #5 |
+| Success Metric | Metric chính về tốc độ; metric phụ gồm "xác định trạm ≤ 1 phút", "100% được kiểm tra", "không đề xuất trạm ngoài danh sách" | Giữ metric tốc độ; thêm metric kết quả (tỉ lệ ca xe tới trạm và sạc được không cần cứu hộ); bỏ 3 metric phụ | Phản biện #2 và #3: metric "≤ 1 phút" đo tính năng; chỉ đo tốc độ là chưa đủ; 2 metric còn lại là ràng buộc |
+| Boundary | Có đoạn research về chính sách cứu hộ VinFast | Thêm "100% được kiểm tra" và "không đề xuất trạm ngoài danh sách / vượt tầm pin" từ Success Metric; bỏ research | Phản biện #3 và #4 |
+| AI intervention point, Mức chọn, Rủi ro | Chưa có | Điền theo kết quả CP6 (mục 6.2, 4.3) | Trường mới của v1 |
 
 **Tiêu chí đánh giá đầu ra của AI (3–5 tiêu chí):**
 
