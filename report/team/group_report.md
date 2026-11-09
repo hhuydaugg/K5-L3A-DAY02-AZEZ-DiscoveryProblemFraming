@@ -8,7 +8,7 @@
 - Tên nhóm: AZEZ
 - Thành viên: xem `TEAM.md`
 - Candidate problem được chọn (1 câu): Hỗ trợ điều phối viên tra cứu trạm sạc khả dụng và chỉ dẫn an toàn khi xe taxi điện cạn pin khẩn cấp (< 5%) trên đường đón khách.
-- Quyết định cuối: Go / Not Yet / No-Go
+- Quyết định cuối: Not Yet
 
 ---
 
@@ -328,24 +328,33 @@ Nhóm chọn mức Rule, nên các tiêu chí dưới đây chấm đầu ra c�
 
 | Rủi ro | Câu hỏi | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng |
 |---|---|---|---|
-| **Value** | Người dùng có thật sự cần và sẽ dùng không? | | |
-| **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | | |
-| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | | |
-| **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | | |
+| **Value** | Người dùng có thật sự cần và sẽ dùng không? | **Cao** | Giả định #1 (tài xế gọi về tổng đài thay vì tự tìm trạm) quan trọng 5/5 nhưng bằng chứng mới 1/5. V-App đã cho tài xế tự xem trạm và phiên sạc (mục 3.3), nên số ca thực sự cần điều phối viên có thể ít hơn dự kiến. Thời gian 14–17 phút/ca và tần suất 3–4 ca/ca trực mới có từ 1 điều phối viên. |
+| **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra không? | **Thấp** | Đầu ra là 2 trạm kèm lý do lọc (khoảng cách, trụ trống, loại cổng) và một tin nhắn từ template. Điều phối viên đọc và sửa được ngay, không phải đoán vì sao máy chọn. Rủi ro còn lại là duyệt lướt, đã có người kiểm ở mục 7. |
+| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | **TB** | Logic lọc bằng Rule đơn giản và nhóm làm được. Điểm chưa chắc là dữ liệu: trang V-App có nói theo dõi tình trạng trụ theo thời gian thực nhưng không ghi rõ có hiển thị trụ trống hay không (giả định #5, bằng chứng 2/5). Cũng chưa rõ màn hình quản lý xe có kết nối được với dữ liệu trạm sạc hay không. Trong lab nhóm chỉ làm được với dữ liệu giả lập. |
+| **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | **TB** | Chọn Rule nên không có chi phí gọi mô hình. Vị trí xe cũng không phải đưa ra công cụ AI bên ngoài, nên giả định #6 nhẹ đi nhiều. Tuy vậy, việc tích hợp cần quyền truy cập hệ thống nội bộ của GSM và V-Green, mà nhóm chưa có bằng chứng nào về việc được cho phép. Cũng chưa xác định ai cập nhật danh sách trạm cho phép và bộ lưu ý an toàn theo dòng xe. |
 
 ### 8.2. Kết luận
 
-**Quyết định:** Go / Not Yet / No-Go
+**Quyết định:** Not Yet
 
-**Lý do:**
+**Lý do:** Cách làm đã rõ: chọn Rule, có boundary, HITL và phương án quay về. Usability thấp nên nếu pain có thật thì giải pháp dễ được dùng. Nhưng rủi ro Value đang Cao: chưa kiểm được tài xế có thực sự gọi về tổng đài khi pin dưới 5% không, và số liệu thời gian, tần suất mới từ 1 người. Feasibility còn phụ thuộc vào việc có dữ liệu trụ trống cho phía điều phối hay không. Làm ngay có nguy cơ giải một bước mà V-App đã giải ở phía tài xế.
 
-**Nếu Go — pilot nhỏ nhất:**
+**Nếu Go — pilot nhỏ nhất:** Không áp dụng ở thời điểm này. Khi đạt điều kiện ở mục Not Yet, pilot dự kiến như sau: 1–2 điều phối viên, 1 khu vực ở Hà Nội, các ca trực giờ cao điểm trong 2 tuần. Bắt đầu bằng bảng trạm lọc sẵn theo khu vực và template tin nhắn trên bảng tính, chưa tích hợp hệ thống. Đo theo metric ở mục 7 và so với log ticket trước pilot.
 
 **Nếu Not Yet — cần kiểm chứng gì trước:**
 
-**Nếu No-Go — nên làm gì thay AI:**
+1. Giả định #1: phỏng vấn ít nhất 5 tài xế Xanh SM về lần gần nhất pin dưới 5%: họ gọi tổng đài hay tự dùng V-App, và vì sao.
+2. Giả định #2, #3, #4: phỏng vấn thêm 2–3 điều phối viên, hoặc xin log ticket 1–2 tuần, để có số ca mỗi ca trực và thời gian từng bước.
+3. Giả định #5: kiểm xem V-App hoặc hệ thống nội bộ có hiển thị số trụ trống theo trạm không, và phía điều phối có xem được không.
 
-**Ngưỡng dừng** (nếu sau … mà … thì quay về …):
+Chuyển sang Go khi: đa số tài xế được hỏi xác nhận vẫn gọi tổng đài trong ca pin khẩn cấp; ít nhất 3 điều phối viên cho số liệu tra trạm từ 4 phút trở lên; và có nguồn dữ liệu trụ trống mà phía điều phối dùng được.
+
+**Nếu No-Go — nên làm gì thay AI:** Không áp dụng.
+
+**Ngưỡng dừng:**
+
+- Nếu sau vòng kiểm chứng mà đa số tài xế tự xử lý bằng V-App, hoặc bước tra trạm thực tế dưới 2 phút, thì dừng và quay về phương án No AI: quy trình chuẩn, danh sách trạm theo khu vực và template tin nhắn in sẵn (mục 6.2).
+- Nếu sau 2 tuần pilot mà median thời gian xử lý không giảm xuống dưới 8 phút, hoặc tỉ lệ ca xe tới trạm và sạc được thấp hơn baseline, thì dừng pilot và quay về quy trình thủ công hiện tại.
 
 ---
 
