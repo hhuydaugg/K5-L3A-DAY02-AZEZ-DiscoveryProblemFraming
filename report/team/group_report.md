@@ -87,16 +87,16 @@ Ban đầu bạn Hưng và bạn Tĩnh muốn chọn bài toán CSKH hoặc Y t�
 
 | # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
 |---:|---|---|---:|---:|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| 1 | Khi xe cạn pin dưới 5%, tài xế gọi về tổng đài điều phối, chứ không tự tìm trạm sạc trên ứng dụng | Value | 5 | 1 | ✅ Ưu tiên số 1: nếu sai thì actor "điều phối viên" sai |
+| 2 | Điều phối viên khác cũng mất trên 10 phút cho mỗi ca xe cạn pin, không chỉ một người | Value | 5 | 2 | ✅ Mới có số liệu từ 1 điều phối viên (anh N.) |
+| 3 | Ca xe cạn pin khẩn cấp xảy ra đủ thường xuyên (3–4 ca mỗi ca trực giờ cao điểm) | Value | 4 | 2 | ✅ Nếu hiếm thì impact nhỏ; mới có 1 nguồn |
+| 4 | Bước tốn thời gian nhất là tra trạm còn trụ trống (5–6 phút), không phải nghe máy hay hỏi vị trí | Value | 4 | 2 | ✅ Hỏi cùng giả định #2 |
+| 5 | Dữ liệu trụ sạc còn trống theo thời gian thực đã có sẵn và đủ tin cậy để điều phối viên dùng | Feasibility | 4 | 2 | Kiểm bằng research (V-App, ứng dụng tài xế) |
+| 6 | Công ty cho phép đưa vị trí xe và dữ liệu vận hành vào công cụ AI | Viability | 4 | 1 | Chưa kiểm được trong buổi lab; hỏi điều phối viên nếu có dịp |
 
-*Điền 4–6 giả định; xóa dòng thừa.*
+*Bản nháp để nhóm thảo luận: điểm "Quan trọng" và "Đã có bằng chứng" có thể chỉnh. "Đã có bằng chứng" chấm theo nguồn hiện có: 1 = chưa có gì, 2 = mới có 1 người hoặc 1 nguồn.*
 
-Giả định nhóm kiểm chứng trong buổi này:
+Giả định nhóm kiểm chứng trong buổi này: #1, #2, #3, #4 bằng phỏng vấn tài xế Xanh SM và điều phối viên; #5 bằng research giải pháp đã có (mục 3.3).
 
 ### 3.2. Kiểm chứng
 
