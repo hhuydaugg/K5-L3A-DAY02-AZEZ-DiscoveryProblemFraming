@@ -125,9 +125,17 @@ Tổng hợp:
 
 | Công cụ / case / pattern | Link | Giải bước nào trong quy trình? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| V-App (V-Green): tính năng gợi ý lộ trình sạc và danh sách phiên sạc, ra mắt 21/05/2026 | [Green SM, 21/05/2026](https://www.greensm.com/vn-vi/news/ra-mat-tinh-nang-moi-goi-y-lo-trinh-sac-va-danh-sach-phien-sac-tren-ung-dung-v-app) | Bước 3 (tìm trạm còn trụ), nhưng ở phía tài xế, không phải màn hình điều phối viên | Có sẵn và gửi thẳng cho tài xế Xanh SM; gợi ý trạm dừng sạc trên tuyến, xem trên bản đồ; theo dõi phiên sạc ở từng trạm (mức pin, thời gian sạc còn lại của các xe đang sạc); trang ghi "theo dõi tình trạng các trụ sạc theo thời gian thực" | Không ghi rõ có hiển thị trụ nào đang trống; điều phối viên vẫn phải mở app này song song với màn hình quản lý xe | Tài xế đã có công cụ tự tìm trạm, nên phải kiểm giả định #1 (tài xế còn gọi tổng đài không). Dữ liệu trạng thái trụ đã tồn tại, giảm rủi ro giả định #5 |
+| Dịch vụ cứu hộ pin ô tô điện 24/7 của VinFast (xe sạc lưu động) | [Tuổi Trẻ, 04/05/2022](https://tuoitre.vn/vinfast-trien-khai-dich-vu-cuu-ho-pin-o-to-dien-24-7-20220504115935947.htm) | Bước cuối, khi xe không tự đến được trạm sạc | Gọi hotline 1900 23 23 89, xe sạc lưu động đến tận nơi; 300.000 đ cho mỗi lần sạc cứu hộ tối đa 15 phút, đi thêm khoảng 30 km (VF e34) | Phải chờ xe cứu hộ tới; giá và phạm vi (Hà Nội, Đà Nẵng, TP.HCM và tỉnh lân cận trong 100 km) là thông tin năm 2022, cần kiểm lại; không giải bước tra trạm của điều phối viên | Đây là phương án quay về đã có sẵn khi chỉ dẫn đến trạm thất bại, dùng được cho mục "phương án quay về" ở CP5 |
+| Google Maps: hiển thị số trụ sạc còn trống theo thời gian thực (2019) và dự đoán số trụ còn trống khi tới nơi (11/2025) | [9to5Google, 23/04/2019](https://9to5google.com/2019/04/23/google-maps-ev-charging-stations-availability/); [ChannelNews, 20/11/2025](https://www.channelnews.com.au/google-maps-uses-ai-to-predict-ev-charger-availability-before-arrival/) | Bước 3: biết trạm nào còn trụ, và còn trụ khi xe tới nơi | Hiển thị số trụ trống có từ 2019; tính năng dự đoán năm 2025 dùng AI trên dữ liệu thời gian thực | Chỉ hoạt động với mạng sạc chia sẻ dữ liệu cho Google; chưa rõ trạm V-Green ở Việt Nam có trạng thái trụ trên Google Maps không | Pattern: hiển thị trụ trống là việc của Rule khi đã có dữ liệu; AI dự đoán chỉ là lớp thêm sau đó, chưa cần ở giai đoạn này |
+
+**Research cho thấy (để nhóm thảo luận):**
+
+- Phần "tìm trạm còn trụ" đã có công cụ phía tài xế (V-App). Khoảng trống còn lại nằm ở **phía điều phối viên**: phải chuyển qua lại giữa 2 hệ thống, và tự soạn tin chỉ dẫn.
+- Nếu phỏng vấn cho thấy tài xế tự dùng V-App mà không gọi tổng đài, actor "điều phối viên" cần được thu hẹp, ví dụ chỉ còn các ca tài xế không tự xử lý được.
+- Cứu hộ sạc lưu động của VinFast là phương án quay về sẵn có khi xe không tới được trạm.
+
+*Link trang cứu hộ của VinFast trong báo cáo của Tùng (vinfastauto.com/vn_vi/dich-vu-cuu-ho-xe-dien-vinfast-247) trả về lỗi 403 khi kiểm tự động; cần mở bằng trình duyệt để xác nhận trước khi dùng.*
 
 ---
 
