@@ -94,7 +94,7 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - Học được cách cả nhóm dũng cảm ra quyết định **Not Yet** thay vì vội vàng Go, khi nhận thấy giả định cốt lõi (tài xế có gọi về tổng đài hay tự tra trên V-App) chưa được kiểm chứng đầy đủ trên người dùng thực tế.
 
 
-### HoVaTen-MSSV
+### NguyenVietHung-2A202603411
 
 **Phần việc phụ trách:**
 - Phụ trách đóng góp ý tưởng cho CP1 và nghiên cứu chuyên sâu 3 problem cards cho CP2.
@@ -109,8 +109,9 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - CP6: Tham gia thảo luận ma trận độ mơ hồ × độ phức tạp, thống nhất lựa chọn mức Rule (dùng hệ thống lọc trạm theo điều kiện cứng và template tin nhắn chuẩn); cùng nhóm đánh giá 4 rủi ro và ra quyết định Not Yet kèm ngưỡng dừng pilot.
 
 **Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
-
--
+- Báo cáo cá nhân `report/individual/2A202603411_NguyenVietHung.md`
+- `group_report.md` mục 2.1 (bảng pitch #10, câu hỏi chất vấn Nguyễn Hoàng Huy và câu hỏi nhận từ Thanh Tùng): commit `097e714`, `d6da0bf`.
+- `group_report.md` mục 2.2 (cluster A), mục 2.3 (cây OST) và mục 2.4 (chấm điểm shortlist): commit `d6da0bf`, `decd794`.
 
 **Điều mình học được từ phần nhóm:**
 - Hiểu sâu sắc rằng việc giải quyết bài toán không phải lúc nào cũng cần đến AI phức tạp; việc nhận diện chính xác bottleneck và chọn mức can thiệp phù hợp (như Rule-based) vừa tiết kiệm chi phí, vừa đảm bảo an toàn tuyệt đối cho quy trình vận hành khẩn cấp.
