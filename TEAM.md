@@ -97,17 +97,21 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 ### HoVaTen-MSSV
 
 **Phần việc phụ trách:**
+- Phụ trách đóng góp ý tưởng cho CP1 và nghiên cứu chuyên sâu 3 problem cards cho CP2.
+- Phụ trách chính phần Kiểm chứng và Research giải pháp đã có (CP4) cùng Nguyễn Công Tĩnh.
+- Tham gia thảo luận CP3 (pitch, phản biện, chấm điểm), xây dựng quy trình (CP5), xác định mức can thiệp và đánh giá rủi ro ra quyết định (CP6).
 
--
 
 **Đóng góp cụ thể** (mình đã làm gì, ra sản phẩm gì):
-
--
+- CP3: Pitch 3 card cá nhân (AI Scribe y tế, Tiếp nhận đặt lịch khám, Medication Reminder); đặt 3 câu hỏi phản biện sâu cho Nguyễn Hoàng Huy về bài toán trạm sạc và VinWonders; trả lời bộ 3 câu hỏi phản biện từ Trần Thanh Tùng; tham gia thảo luận gom 4 cluster và chấm điểm chọn candidate #10.
+- CP4: Cùng Công Tĩnh rà soát 6 giả định trong Assumption Map; thực hiện research các giải pháp đã có (V-App của Green SM, dịch vụ cứu hộ pin VinFast 24/7, Google Maps EV); phát hiện tính năng gợi ý trạm sạc có sẵn trên V-App, chỉ ra rủi ro Value cốt lõi của bài toán.
+- CP5: Cùng nhóm rà soát quy trình hiện tại (5 bước, 14–17 phút) và chuẩn hóa quy trình tương lai (3 bước, ~5 phút); đóng góp ý kiến về cơ chế Human-in-the-loop đối chiếu cổng sạc xe trước khi gửi tin nhắn cho tài xế.
+- CP6: Tham gia thảo luận ma trận độ mơ hồ × độ phức tạp, thống nhất lựa chọn mức Rule (dùng hệ thống lọc trạm theo điều kiện cứng và template tin nhắn chuẩn); cùng nhóm đánh giá 4 rủi ro và ra quyết định Not Yet kèm ngưỡng dừng pilot.
 
 **Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
 
 -
 
 **Điều mình học được từ phần nhóm:**
+- Hiểu sâu sắc rằng việc giải quyết bài toán không phải lúc nào cũng cần đến AI phức tạp; việc nhận diện chính xác bottleneck và chọn mức can thiệp phù hợp (như Rule-based) vừa tiết kiệm chi phí, vừa đảm bảo an toàn tuyệt đối cho quy trình vận hành khẩn cấp.
 
--
