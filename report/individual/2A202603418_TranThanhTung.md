@@ -7,9 +7,9 @@
 
 - Họ tên: Trần Thanh Tùng
 - MSSV: 2A202603418
-- Email trường: (cập nhật theo định dạng trường)
-- Tên nhóm: (sẽ cập nhật cùng nhóm)
-- Link repo nhóm: (sẽ cập nhật link repo nhóm)
+- Email trường: 26ai.tungtt@vinuni.edu.vn
+- Tên nhóm: AZEZ
+- Link repo nhóm: (https://github.com/hhuydaugg/K5-L3A-DAY02-AZEZ-DiscoveryProblemFraming)
 
 ---
 
@@ -156,8 +156,8 @@ HIỆN TẠI — 4 bước, tổng thời gian: 35 - 40 phút sau họp
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | Trình bày 3 card của mình, tập trung sâu vào bài #10 (Xử lý sự cố taxi điện cạn pin khẩn cấp < 5%), phân tích 2 điểm nghẽn chính: tra cứu trạm sạc mất 5–6 phút và tự gõ tin nhắn chỉ dẫn mất 3–4 phút | Bài #10 được nhóm đánh giá rất cao về tính thực tiễn và tính cấp bách, đạt điểm tuyệt đối 35/35 ở bảng chấm điểm và được chọn làm bài toán chung của cả nhóm |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt cho Hưng (bài #7, #8, #9):<br>• Bài #7: *"Bệnh án y khoa đòi hỏi độ chính xác tuyệt đối, nếu AI nghe nhầm triệu chứng hoặc bịa liều thuốc (ảo giác) thì bác sĩ soát lại có mất thời gian hơn tự gõ không, và rủi ro pháp lý ai chịu trách nhiệm?"*<br>• Bài #8: *"Triệu chứng bệnh nhân tự mô tả thường rất mơ hồ (như đau bụng, sốt), nếu AI phân luồng sai chuyên khoa khiến bệnh nhân khám nhầm phòng và trễ điều trị thì xử lý rủi ro an toàn này thế nào?"*<br>• Bài #9: *"Việc nhắc giờ uống thuốc hiện các app lịch hoặc báo thức điện thoại chỉ cần cài đặt giờ cố định (Rule) là xong, bài này thật sự cần đến AI ở bước nào hay chỉ cần đồng hồ hẹn giờ?"* | Hưng và nhóm nhận thấy các bài toán y tế (#7, #8) có rủi ro pháp lý và an toàn quá lớn, nhóm không có chuyên môn y khoa để thẩm định trong 4 tiếng lab; còn bài #9 chỉ cần dùng Rule/hẹn giờ là giải quyết được nên không cần AI. Cả nhóm thống nhất loại các đề tài này để tránh rủi ro Feasibility/Viability. |
+| Pitch Problem Card | Trình bày 3 card của mình, tập trung sâu vào bài #10 (Xử lý sự cố taxi điện cạn pin khẩn cấp < 5%), phân tích 2 điểm nghẽn chính: tra cứu trạm sạc mất 5–6 phút và tự gõ tin nhắn chỉ dẫn mất 3–4 phút |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt cho Hưng (bài #7, #8, #9):<br>• Bài #7: *"Bệnh án y khoa đòi hỏi độ chính xác tuyệt đối, nếu AI nghe nhầm triệu chứng hoặc bịa liều thuốc (ảo giác) thì bác sĩ soát lại có mất thời gian hơn tự gõ không, và rủi ro pháp lý ai chịu trách nhiệm?"*<br>• Bài #8: *"Triệu chứng bệnh nhân tự mô tả thường rất mơ hồ (như đau bụng, sốt), nếu AI phân luồng sai chuyên khoa khiến bệnh nhân khám nhầm phòng và trễ điều trị thì xử lý rủi ro an toàn này thế nào?"*<br>• Bài #9: *"Việc nhắc giờ uống thuốc hiện các app lịch hoặc báo thức điện thoại chỉ cần cài đặt giờ cố định (Rule) là xong, bài này thật sự cần đến AI ở bước nào hay chỉ cần đồng hồ hẹn giờ?"* |
 | Nhận phản biện | Câu hỏi tôi nhận được từ Tĩnh (bài #10, #11, #12):<br>• Bài #10: *"Nếu hệ thống đề xuất trạm sạc gần nhất nhưng trạm đó hết trụ, đang bảo trì hoặc không phù hợp với loại xe, làm thế nào để đảm bảo thông tin đưa ra thực sự chính xác và an toàn cho tài xế?"*<br>• Bài #11: *"Nếu AI đánh giá bài làm đã đáp ứng rubric nhưng thực tế nội dung còn sai hoặc thiếu yêu cầu chuyên môn, sinh viên có thể quá tin tưởng vào kết quả AI và nộp bài không đạt chất lượng hay không?"*<br>• Bài #12: *"Nếu trong cuộc họp có những quyết định chưa thống nhất hoặc chưa xác định rõ người chịu trách nhiệm, AI sẽ phân biệt đâu là quyết định chính thức và đâu chỉ là ý kiến đề xuất như thế nào?"* | Tôi đã sửa gì (cho bài #10 của nhóm):<br>1. **Bổ sung trạm dự phòng:** Hệ thống luôn đề xuất **1 trạm chính + 1 trạm dự phòng** kế bên, kèm số hotline quản lý trạm để điều phối viên có thể gọi kiểm tra ngay nếu trạm đang bảo trì.<br>2. **Bắt buộc có Human-in-the-loop:** Điều phối viên bắt buộc phải nhìn lướt đối chiếu loại cổng sạc (sạc nhanh DC hay sạc AC) khớp với dòng xe (VF5, VF e34, VF8) trước khi bấm gửi, tuyệt đối không để AI tự gửi tự động (Agent).<br>3. **Bổ sung tiêu chí đánh giá (eval):** 100% tin nhắn chỉ dẫn gửi đi phải đúng loại cổng sạc và tỷ lệ tin nhắn bị điều phối viên phải sửa lại từ ngữ dưới 10%. |
 | Gom cluster / cây OST | | |
 | Chọn candidate problem | | |
