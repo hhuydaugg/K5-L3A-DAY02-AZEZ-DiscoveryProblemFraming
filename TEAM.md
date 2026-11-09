@@ -116,3 +116,32 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 **Điều mình học được từ phần nhóm:**
 - Hiểu sâu sắc rằng việc giải quyết bài toán không phải lúc nào cũng cần đến AI phức tạp; việc nhận diện chính xác bottleneck và chọn mức can thiệp phù hợp (như Rule-based) vừa tiết kiệm chi phí, vừa đảm bảo an toàn tuyệt đối cho quy trình vận hành khẩn cấp.
 
+### NguyenCongTinh-2A202603373
+
+**Phần việc phụ trách:**
+
+- Phụ trách nghiên cứu, kiểm chứng các giả định và tìm hiểu giải pháp đã có (CP4) cùng Nguyễn Việt Hưng.
+- Xây dựng và phân tích 5 SCAN, lựa chọn 3 Problem Card cá nhân về phân loại phản hồi khách hàng, phát hiện vấn đề trùng lặp và hỗ trợ CSKH xử lý lỗi (CP1–CP2).
+- Tham gia pitch 3 Problem Card, đặt câu hỏi phản biện cho các thành viên và tiếp nhận, trả lời phản biện về các Problem Card của mình (CP3).
+- Tham gia thảo luận, đánh giá mức độ phù hợp của giải pháp và các rủi ro trong quá trình hội tụ nhóm (CP3–CP6).
+
+**Đóng góp cụ thể (mình đã làm gì, ra sản phẩm gì):**
+
+- **CP1–CP2:** Xây dựng bảng 5 SCAN theo các lăng kính: công việc lặp lại, tốn thời gian, cần đọc và tổng hợp nhiều thông tin, pain từ người khác. Phân tích các dấu hiệu về tần suất, thời gian và khối lượng công việc; xây dựng 3 Problem Card về tự động phân loại phản hồi khách hàng, phát hiện các phản hồi có cùng nguyên nhân và hỗ trợ CSKH tra cứu hướng dẫn xử lý lỗi.
+- **CP3:** Pitch 3 Problem Card cá nhân; chuẩn bị nội dung giải thích vấn đề, đối tượng chịu ảnh hưởng, quy trình hiện tại và điểm nghẽn. Đặt 3 câu hỏi phản biện cho các bài toán của thành viên khác, tập trung vào tính chính xác, hiệu quả tiết kiệm thời gian và tính cần thiết của AI. Tiếp nhận 3 câu hỏi phản biện từ Nguyễn Hoàng Huy và xây dựng câu trả lời, làm rõ vai trò AI hỗ trợ phân loại, phát hiện nhóm vấn đề tương tự và kết hợp Knowledge Base với AI, Workflow.
+- **CP4:** Cùng Nguyễn Việt Hưng nghiên cứu các giải pháp hiện có liên quan đến bài toán trạm sạc xe điện, bao gồm V-App của Green SM, dịch vụ cứu hộ pin VinFast 24/7 và Google Maps EV. Tổng hợp các nguồn tham khảo, phân tích chức năng đã tồn tại, xác định những giả định cần kiểm chứng và các khoảng trống thông tin của bài toán nhóm lựa chọn.
+- **CP5:** Tham gia rà soát quy trình hiện tại và quy trình đề xuất của nhóm; đóng góp ý kiến về thời gian xử lý, các điểm nghẽn và khả năng rút ngắn thao tác cho điều phối viên. Tham gia góp ý để quy trình mới có bước kiểm tra thông tin trạm sạc và xác nhận an toàn trước khi gửi hướng dẫn cho tài xế.
+- **CP6:** Tham gia thảo luận lựa chọn mức can thiệp phù hợp, đánh giá các rủi ro và thống nhất quyết định Not Yet cùng cả nhóm. Góp ý rằng cần kiểm chứng giả định cốt lõi về hành vi của tài xế khi pin xuống dưới 5% trước khi quyết định triển khai giải pháp.
+
+**Bằng chứng (phần nào trong group_report.md, file nào trong report/assets/, commit nào):**
+
+- Báo cáo cá nhân: `report/individual/2A202603373_NguyenCongTinh.md`.
+- Bảng 5 SCAN và 3 Problem Card cá nhân: `report/individual/2A202603373_NguyenCongTinh.md`.
+- Nội dung pitch và câu hỏi phản biện CP3: `group_report.md` mục 2.1 (nếu có ghi nhận trong bản nhóm).
+- Research và kiểm chứng giải pháp hiện có CP4: `group_report.md` mục 3 và các tài liệu nghiên cứu liên quan.
+- Các phần thảo luận quy trình, mức can thiệp và đánh giá rủi ro: `group_report.md` mục 4, 5, 6, 7 và 8.
+- Commit cập nhật báo cáo cá nhân: `b3cef3e` và các commit tiếp theo trên nhánh `nguyencongtinh-update-report`.
+
+**Điều mình học được từ phần nhóm:**
+
+Qua quá trình thực hiện, mình hiểu rằng việc xác định đúng vấn đề quan trọng hơn việc vội vàng lựa chọn công nghệ để giải quyết vấn đề. Một giải pháp AI nghe có vẻ hiện đại nhưng chưa chắc phù hợp nếu chưa chứng minh được nhu cầu thực tế và hiệu quả mang lại. Mình học được cách đặt câu hỏi phản biện, kiểm chứng giả định bằng dữ liệu và nghiên cứu các giải pháp đã tồn tại trước khi đề xuất giải pháp mới. Đặc biệt, qua bài toán trạm sạc xe điện, mình nhận ra rằng trong những quy trình liên quan đến an toàn vận hành, cần ưu tiên tính chính xác, khả năng kiểm soát và vai trò xác nhận của con người thay vì tự động hóa hoàn toàn.
