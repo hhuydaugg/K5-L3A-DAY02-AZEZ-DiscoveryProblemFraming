@@ -360,8 +360,29 @@ Chuyển sang Go khi: đa số tài xế được hỏi xác nhận vẫn gọi 
 
 ## 9. Hạn chế và hướng tiếp theo
 
--
+**Hạn chế:**
+
+- Số phút từng bước (14–17 phút/ca) và tần suất (3–4 ca/ca trực giờ cao điểm) mới lấy từ phỏng vấn 1 điều phối viên, chưa đủ để làm baseline đại diện.
+- Mục 3.2 chưa có kết quả kiểm chứng. Giả định quan trọng nhất (#1, tài xế gọi về tổng đài thay vì tự dùng V-App) vẫn ở mức bằng chứng 1/5.
+- Nhóm chưa phỏng vấn tài xế, nên mới thấy vấn đề từ phía điều phối viên.
+- Giả định về dữ liệu trụ trống (#5) mới kiểm qua trang công bố tính năng của V-App, chưa xác nhận được phía điều phối có xem được trụ trống theo thời gian thực hay không.
+- Giả định về quyền tích hợp hệ thống nội bộ của GSM và V-Green (#6) chưa kiểm được trong buổi lab.
+- Thông tin cứu hộ sạc lưu động của VinFast (giá, phạm vi) là thông tin năm 2022, cần kiểm lại trước khi dùng làm phương án quay về.
+- Số phút ở quy trình tương lai (khoảng 5 phút/ca) là ước tính, chưa đo thực tế.
+
+**Hướng tiếp theo:**
+
+1. Hoàn thành kiểm chứng theo mục 8.2: phỏng vấn ít nhất 5 tài xế và 2–3 điều phối viên, hoặc xin log ticket 1–2 tuần. Cập nhật mục 3.2 và quyết định ở mục 8 theo kết quả.
+2. Làm prototype bằng bảng tính trước khi tích hợp: bảng trạm lọc sẵn theo khu vực và template tin nhắn theo dòng xe. Chạy thử với dữ liệu giả lập để đo xem bước 3 và bước 4 có giảm thời gian thật không.
+3. Xử lý câu hỏi phản biện của Hưng ở pitch #1: khi nhiều ca xảy ra cùng lúc ở gần nhau, Rule cần tránh dồn các xe về cùng một trạm. Ví dụ, ghi nhận trạm đã chỉ định cho ca trước và trừ số trụ tương ứng khi lọc ca sau.
+4. Chỉ cân nhắc nâng mức sau khi Rule chạy ổn trong pilot. Có hai hướng: thêm lớp dự đoán trụ trống khi xe tới nơi (theo pattern của Google Maps), hoặc chuyển bước soạn tin sang Workflow nếu template cứng phải sửa tay quá nhiều.
+5. Bài toán phân loại phản hồi CSKH (#4) là hướng phát triển tiếp theo của nhóm, khi có dữ liệu mẫu thực tế (mục 2.4).
 
 ## 10. Tài liệu tham khảo
 
--
+1. Green SM (21/05/2026). *Ra mắt tính năng mới: Gợi ý lộ trình sạc và Danh sách phiên sạc trên ứng dụng V-App*. https://www.greensm.com/vn-vi/news/ra-mat-tinh-nang-moi-goi-y-lo-trinh-sac-va-danh-sach-phien-sac-tren-ung-dung-v-app
+2. VinFast. *Câu hỏi thường gặp — Chính sách hậu mãi ô tô điện* (cứu hộ 24/7 qua hotline 1900 23 23 89 và dịch vụ cứu hộ pin). https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai
+3. Tuổi Trẻ (04/05/2022). *VinFast triển khai dịch vụ cứu hộ pin ô tô điện 24/7*. https://tuoitre.vn/vinfast-trien-khai-dich-vu-cuu-ho-pin-o-to-dien-24-7-20220504115935947.htm
+4. 9to5Google (23/04/2019). *Google Maps hiển thị tình trạng trụ sạc xe điện còn trống theo thời gian thực*. https://9to5google.com/2019/04/23/google-maps-ev-charging-stations-availability/
+5. ChannelNews (20/11/2025). *Google Maps dùng AI dự đoán trụ sạc còn trống trước khi tới nơi*. https://www.channelnews.com.au/google-maps-uses-ai-to-predict-ev-charger-availability-before-arrival/
+6. V-Green. Trang chủ và chính sách trạm sạc. https://vgreen.net
