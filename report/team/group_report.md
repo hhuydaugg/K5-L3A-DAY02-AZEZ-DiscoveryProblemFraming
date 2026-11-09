@@ -250,18 +250,23 @@ Nhóm đưa Problem Statement v0 cho AI phản biện với yêu cầu chỉ ra 
 
 ### 6.1. Ma trận độ mơ hồ × độ phức tạp
 
-Bài của nhóm nằm ở ô:
+*Bản nháp phân tích để nhóm thảo luận; cột "Chọn?", "Mức chọn" và "Vì sao không chọn mức đơn giản hơn" do nhóm chốt.*
+
+Bài của nhóm nằm ở ô: **Độ mơ hồ thấp × độ phức tạp trung bình** (giữa "Rule hoặc Workflow đơn giản thường đủ" và "Workflow nhiều bước rõ ràng, chưa chắc cần Agent").
 
 Vì sao:
+
+- **Độ mơ hồ thấp:** đầu ra có đúng/sai rõ ràng. Trạm được chọn phải gần, còn trụ, đúng loại cổng sạc, nằm trong tầm pin còn lại và thuộc danh sách Xanh SM cho phép. Tin nhắn chỉ dẫn chỉ được dùng nội dung an toàn đã duyệt (theo Boundary ở mục 5).
+- **Độ phức tạp trung bình:** cần 3 nguồn dữ liệu (màn hình quản lý xe, trạng thái trụ sạc, danh sách trạm được phép), các bước nối tiếp và bước sau phụ thuộc bước trước, nhưng thứ tự bước cố định, không rẽ nhánh phức tạp.
 
 ### 6.2. So sánh 4 mức
 
 | Mức | Phương án cho bài của nhóm | Đủ khi nào | Rủi ro | Chọn? |
 |---|---|---|---|---|
-| **No AI** (sửa quy trình) | | | | |
-| **Rule** | | | | |
-| **Workflow** | | | | |
-| **Agent** | | | | |
+| **No AI** (sửa quy trình) | Bộ template tin nhắn in sẵn theo dòng xe, danh sách trạm theo khu vực, quy trình chuẩn cho điều phối viên; mở V-App song song với màn hình quản lý xe | Số ca khẩn ít, điều phối viên quen khu vực | Vẫn phải tra 2 hệ thống nên bước 3 vẫn mất 5–6 phút; không biết trụ có trống thật không | |
+| **Rule** | Tự lấy GPS, % pin, dòng xe theo biển số; lọc trạm theo khoảng cách, trạng thái trụ, loại cổng, tầm pin và danh sách cho phép; tin nhắn là template điền sẵn (địa chỉ trạm, khoảng cách, lưu ý an toàn theo dòng xe) | Có dữ liệu trạng thái trụ đáng tin; nội dung chỉ dẫn cố định theo từng loại tình huống | Trạng thái trụ bị trễ; template cứng không xử lý tình huống lạ (đường cấm, kẹt xe), điều phối viên phải sửa tay | |
+| **Workflow** | Rule ở bước lấy dữ liệu và lọc trạm; AI soạn nháp tin chỉ dẫn theo ngữ cảnh (vị trí, mô tả của tài xế); điều phối viên duyệt rồi gửi | Tin nhắn cần thay đổi nhiều theo ngữ cảnh mà template không đáp ứng được | AI thêm thông tin không có trong dữ liệu, sai loại cổng; thêm chi phí và độ trễ; điều phối viên duyệt lướt vì tin máy | |
+| **Agent** | AI tự theo dõi pin cả đội xe, tự chọn trạm, tự nhắn tài xế, tự gọi cứu hộ | Số ca rất lớn và bước tiếp theo không đoán trước được | Tình huống an toàn giao thông; vượt Boundary (tự gửi, tự gọi cứu hộ); khó kiểm soát | Không chọn |
 
 **Mức chọn:**
 
