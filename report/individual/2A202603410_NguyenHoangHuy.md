@@ -177,17 +177,31 @@ Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ ch
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
 
+Điều mình học rõ nhất là cùng một lĩnh vực nhưng đổi actor thì bài toán đổi hẳn. Candidate #1 của mình và #10 của Tùng đều về trạm sạc taxi điện. Mình nhìn từ phía tài xế, còn Tùng nhìn từ phía điều phối viên, nên bottleneck và cách đo khác nhau hoàn toàn. Mình cũng thấy chất lượng bằng chứng giữa các bạn chênh nhau nhiều: Tùng tự bấm giờ 2 lần cho bài #11 và phỏng vấn điều phối viên cho bài #10, trong khi các bài CSKH và y tế phần lớn ghi “giả định” hoặc “chưa có số phút”. Câu hỏi của Tùng ở bài nhắc thuốc (#9) cũng nhắc mình phải hỏi “bài này có thật sự cần AI không” trước khi bàn AI làm gì, vì nhiều khi một báo thức theo giờ cố định là đủ. Còn câu Hưng hỏi bài VinWonders của mình giúp mình tách hai loại vấn đề: thiếu dữ liệu và truyền tải thông tin chưa tốt, vì hai loại này cần giải pháp khác nhau.
+
 **6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+
+Có, và ít nhất ba lần. Lần đầu là khi vẽ Opportunity Solution Tree. Nhóm đưa ra các nhánh như “chatbot AI tư vấn trạm sạc”, “agent tự điều hướng xe” và “bản đồ nhiệt trạm sạc”. Khi tự hỏi “đây là nỗi đau của ai”, nhóm nhận ra chúng là tính năng chứ không phải opportunity, nên gạch bỏ và viết lại thành các pain của điều phối viên. Lần thứ hai là khi chọn đề tài: một trong các lý do chọn là bài này “mẫu mực cho mức Workflow” vì AI soạn nháp tin nhắn. Tức là nhóm đã nghĩ sẵn mức can thiệp từ trước khi phân tích. Đến CP6, khi so sánh 4 mức, nhóm thấy template điền sẵn đã đáp ứng đúng boundary, nên chuyển sang Rule. Lần thứ ba là Problem Statement v0 có lẫn “chọn phương án dự phòng” và metric “xác định trạm ≤ 1 phút”. Nhóm chỉ nhận ra khi đưa cho AI phản biện, rồi sửa ở v1.
 
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
 
+Tôi không đổi ý sau khi phản biện
+
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
+
+Kết quả kiểm chứng không làm tôi bất ngờ
 
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
 
+Khó nhất là giữ cho Problem Statement chỉ mô tả vấn đề, không trượt sang giải pháp. Lúc viết nhóm đã nghĩ xong quy trình tương lai, nên các ý như trạm dự phòng hay lọc trạm trong 1 phút tự lọt vào trường Quy trình và Success Metric mà không ai để ý. Cái khó thứ hai là chọn metric. Đo thời gian thì dễ, nhưng gửi chỉ dẫn nhanh mà xe vẫn không tới được trạm thì chưa phải thành công, nên phải thêm metric kết quả, dù chưa có baseline cho nó. Cái khó thứ ba là trung thực về độ mạnh của bằng chứng: số liệu 14–17 phút nghe rất cụ thể, nhưng thực ra chỉ từ một người, nên phải ghi rõ điều đó thay vì viết như sự thật đã được xác nhận.
+
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
 
+Nếu làm lại, mình sẽ đề nghị phỏng vấn tài xế ngay từ đầu, trước khi chấm điểm shortlist. Lúc research mình đã thấy V-App cho tài xế tự tìm trạm, và đó đáng lẽ là tín hiệu để kiểm giả định #1 sớm hơn. Mình cũng sẽ phản biện mạnh hơn ở bảng chấm điểm. Bài taxi điện được 34/35 và “Pain có bằng chứng” được 4/5, trong khi bằng chứng chỉ là một cuộc phỏng vấn. Phần “Vì sao chọn” còn viết “bằng chứng và số liệu xác thực”, nghe chắc chắn hơn thực tế. Điểm thứ ba là câu hỏi của Hưng về việc nhiều xe bị điều về cùng một trạm: nhóm ghi lại nhưng chưa xử lý trong thiết kế, mãi đến phần hướng tiếp theo mới nhắc lại.
+
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
+
+Khi xe taxi điện Xanh SM còn dưới 5% pin và tài xế gọi về tổng đài, điều phối viên GSM phải tìm cho tài xế một trạm sạc còn trụ trống và gửi chỉ dẫn an toàn. Quy trình hiện tại có 5 bước thủ công, mất 14–17 phút mỗi ca. Chậm nhất là bước tra trạm còn trụ (5–6 phút), vì phải đối chiếu giữa màn hình quản lý xe và app bản đồ trạm sạc, rồi đến bước gõ tay tin nhắn (3–4 phút). Metric chính là thời gian từ lúc nhận ca đến lúc gửi chỉ dẫn đã kiểm tra, giảm xuống dưới 5 phút. Metric kết quả là tỉ lệ xe tới được trạm và sạc được mà không cần gọi cứu hộ. Boundary là hệ thống không tự gửi tin, không tự gọi cứu hộ, không đề xuất trạm ngoài danh sách cho phép, và điều phối viên phải duyệt mọi tin nhắn. Vì mọi điều kiện chọn trạm đều có đúng sai rõ ràng và tin nhắn chỉ được dùng nội dung đã duyệt, nhóm chọn mức Rule chứ không dùng AI sinh nội dung. Quyết định là Not Yet: giải pháp đã rõ, nhưng nhóm chưa kiểm được tài xế có thật sự gọi tổng đài thay vì tự dùng V-App, và số liệu mới từ một điều phối viên.
 
 ---
 
