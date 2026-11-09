@@ -234,7 +234,15 @@ Nguồn research dùng để chốt v0:
 
 Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
 
--
+Nhóm đưa Problem Statement v0 cho AI phản biện với yêu cầu chỉ ra lỗ hổng, không viết lại.
+
+| # | Điểm AI chỉ ra | Nhóm đồng ý? | Xử lý |
+|---:|---|---|---|
+| 1 | Trường Actor vẫn ghi giả định "tài xế thường gọi điều phối khi pin < 5%" là việc cần kiểm ở CP4, trong khi CP4 đã xong | Đồng ý | Cập nhật Actor ở v1 theo kết quả phỏng vấn |
+| 2 | Có giải pháp lọt vào Problem Statement: bước "chọn phương án dự phòng" thuộc quy trình tương lai, và metric phụ "xác định trạm chính + trạm dự phòng ≤ 1 phút" đo một tính năng chứ không đo problem | Đồng ý | Bỏ khỏi Quy trình và Success Metric ở v1 |
+| 3 | Success Metric chỉ đo tốc độ; gửi chỉ dẫn nhanh nhưng xe vẫn không tới được trạm thì chưa đạt. Metric phụ (2) và (3) giống boundary hơn là metric | Đồng ý | Thêm metric kết quả ở v1 (ví dụ tỉ lệ ca xe tới được trạm và sạc được); chuyển (2), (3) sang Boundary |
+| 4 | Trường Quy trình và Boundary chứa phần research (V-App, cứu hộ VinFast) thay vì mô tả problem | Đồng ý | Giữ research ở mục 3.3 và phần "Nguồn research", rút gọn các trường ở v1 |
+| 5 | Các trường quá dài, khó đọc nhanh | Đồng ý | Viết lại mỗi trường trong 1–3 câu ở v1 |
 
 ---
 
