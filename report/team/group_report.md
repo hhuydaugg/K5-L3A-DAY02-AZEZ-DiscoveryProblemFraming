@@ -175,7 +175,7 @@ Tổng: 5 bước, 14–17 phút mỗi ca, 5/5 bước thủ công.
 flowchart LR
   A["1. Nghe cuộc gọi, mở ticket<br/>CON NGƯỜI · 2'"] --> B["2. Tự lấy GPS, % pin, dòng xe<br/>theo biển số<br/>RULE · ~0'"]
   B --> C["3. Lọc 1 trạm chính + 1 trạm dự phòng:<br/>gần nhất, còn trụ, đúng loại cổng,<br/>trong tầm pin còn lại<br/>RULE · ~0,5'"]
-  C --> D["4. Soạn nháp tin chỉ dẫn<br/>RULE (template) hoặc AI<br/>~0,5'"]
+  C --> D["4. Điền template tin chỉ dẫn<br/>RULE · ~0,5'"]
   D --> E["5. Kiểm trạm và tin nhắn,<br/>sửa nếu cần, bấm gửi<br/>CON NGƯỜI · 1'"]
   E --> F["6. Theo dõi xe<br/>CON NGƯỜI · 1'"]
   F -- "Tới nơi hết trụ" --> G["Chuyển sang trạm dự phòng"]
@@ -188,7 +188,7 @@ flowchart LR
 | 1 | Con người | Điều phối viên vẫn là người nghe tài xế và đánh giá mức độ khẩn |
 | 2 | Rule | Tra cứu theo biển số, không cần AI |
 | 3 | Rule | Lọc theo khoảng cách, trạng thái trụ, loại cổng sạc, quãng đường còn đi được; luôn trả về 1 trạm chính + 1 trạm dự phòng |
-| 4 | Rule hoặc AI | Template có chỗ điền sẵn có thể đã đủ; nhóm quyết định ở CP6 có cần AI hay không |
+| 4 | Rule | Template điền sẵn địa chỉ trạm, khoảng cách và lưu ý an toàn theo dòng xe; nhóm chọn Rule ở CP6 (xem mục 6.2) |
 | 5 | Con người | **Bước kiểm tra (HITL)**: điều phối viên duyệt trước khi tin nhắn đến tài xế |
 | 6 | Con người | Theo dõi xe đến khi cắm được sạc |
 
@@ -250,8 +250,6 @@ Nhóm đưa Problem Statement v0 cho AI phản biện với yêu cầu chỉ ra 
 
 ### 6.1. Ma trận độ mơ hồ × độ phức tạp
 
-*Bản nháp phân tích để nhóm thảo luận; cột "Chọn?", "Mức chọn" và "Vì sao không chọn mức đơn giản hơn" do nhóm chốt.*
-
 Bài của nhóm nằm ở ô: **Độ mơ hồ thấp × độ phức tạp trung bình** (giữa "Rule hoặc Workflow đơn giản thường đủ" và "Workflow nhiều bước rõ ràng, chưa chắc cần Agent").
 
 Vì sao:
@@ -263,30 +261,24 @@ Vì sao:
 
 | Mức | Phương án cho bài của nhóm | Đủ khi nào | Rủi ro | Chọn? |
 |---|---|---|---|---|
-| **No AI** (sửa quy trình) | Bộ template tin nhắn in sẵn theo dòng xe, danh sách trạm theo khu vực, quy trình chuẩn cho điều phối viên; mở V-App song song với màn hình quản lý xe | Số ca khẩn ít, điều phối viên quen khu vực | Vẫn phải tra 2 hệ thống nên bước 3 vẫn mất 5–6 phút; không biết trụ có trống thật không | |
-| **Rule** | Tự lấy GPS, % pin, dòng xe theo biển số; lọc trạm theo khoảng cách, trạng thái trụ, loại cổng, tầm pin và danh sách cho phép; tin nhắn là template điền sẵn (địa chỉ trạm, khoảng cách, lưu ý an toàn theo dòng xe) | Có dữ liệu trạng thái trụ đáng tin; nội dung chỉ dẫn cố định theo từng loại tình huống | Trạng thái trụ bị trễ; template cứng không xử lý tình huống lạ (đường cấm, kẹt xe), điều phối viên phải sửa tay | |
-| **Workflow** | Rule ở bước lấy dữ liệu và lọc trạm; AI soạn nháp tin chỉ dẫn theo ngữ cảnh (vị trí, mô tả của tài xế); điều phối viên duyệt rồi gửi | Tin nhắn cần thay đổi nhiều theo ngữ cảnh mà template không đáp ứng được | AI thêm thông tin không có trong dữ liệu, sai loại cổng; thêm chi phí và độ trễ; điều phối viên duyệt lướt vì tin máy | |
+| **No AI** (sửa quy trình) | Bộ template tin nhắn in sẵn theo dòng xe, danh sách trạm theo khu vực, quy trình chuẩn cho điều phối viên; mở V-App song song với màn hình quản lý xe | Số ca khẩn ít, điều phối viên quen khu vực | Vẫn phải tra 2 hệ thống nên bước 3 vẫn mất 5–6 phút; không biết trụ có trống thật không | Không chọn; dùng làm phương án quay về khi hệ thống lỗi |
+| **Rule** | Tự lấy GPS, % pin, dòng xe theo biển số; lọc trạm theo khoảng cách, trạng thái trụ, loại cổng, tầm pin và danh sách cho phép; tin nhắn là template điền sẵn (địa chỉ trạm, khoảng cách, lưu ý an toàn theo dòng xe) | Có dữ liệu trạng thái trụ đáng tin; nội dung chỉ dẫn cố định theo từng loại tình huống | Trạng thái trụ bị trễ; template cứng không xử lý tình huống lạ (đường cấm, kẹt xe), điều phối viên phải sửa tay | **Chọn** |
+| **Workflow** | Rule ở bước lấy dữ liệu và lọc trạm; AI soạn nháp tin chỉ dẫn theo ngữ cảnh (vị trí, mô tả của tài xế); điều phối viên duyệt rồi gửi | Tin nhắn cần thay đổi nhiều theo ngữ cảnh mà template không đáp ứng được | AI thêm thông tin không có trong dữ liệu, sai loại cổng; thêm chi phí và độ trễ; điều phối viên duyệt lướt vì tin máy | Không chọn ở giai đoạn này |
 | **Agent** | AI tự theo dõi pin cả đội xe, tự chọn trạm, tự nhắn tài xế, tự gọi cứu hộ | Số ca rất lớn và bước tiếp theo không đoán trước được | Tình huống an toàn giao thông; vượt Boundary (tự gửi, tự gọi cứu hộ); khó kiểm soát | Không chọn |
 
-**Mức chọn:**
+**Mức chọn:** Rule
 
-**Vì sao không chọn mức đơn giản hơn:**
+**Vì sao không chọn mức đơn giản hơn (No AI):** Bottleneck chính nằm ở bước tra trạm còn trụ trống (5–6 phút) vì điều phối viên phải đối chiếu thủ công giữa 2 hệ thống. Template in sẵn và danh sách trạm theo khu vực không giảm được bước này, và không cho biết trụ có đang trống hay không. Cần Rule để tự lấy dữ liệu xe theo biển số và tự lọc trạm theo các điều kiện cố định.
+
+**Vì sao không cần mức cao hơn (Workflow, Agent):** Mọi điều kiện chọn trạm đều có đúng/sai rõ (khoảng cách, trạng thái trụ, loại cổng, tầm pin, danh sách cho phép), nên lọc bằng Rule là đủ. Boundary của nhóm chỉ cho phép tin nhắn dùng nội dung an toàn đã duyệt, và một template điền sẵn làm đúng việc đó; để AI soạn tin sẽ thêm rủi ro bịa thông tin, chi phí và độ trễ mà không giảm thêm bottleneck. Agent bị loại vì tự gửi tin và tự gọi cứu hộ vượt Boundary trong tình huống an toàn giao thông.
 
 ### 6.3. AI Canvas rút gọn
 
-| Thành phần | Nội dung |
-|---|---|
-| **Prediction** — AI dự đoán / tạo ra gì? | |
-| **Judgment** — con người cân nhắc, quyết định gì? | |
-| **Action** — hành động cuối cùng là gì, ai làm? | |
-| **Outcome** — đo kết quả bằng gì? | |
-| **Input** — AI cần dữ liệu đầu vào gì mỗi lần chạy? Có sẵn không? | |
-| **Feedback** — lấy phản hồi ở đâu để cải thiện? | |
+Không áp dụng vì nhóm chọn mức **Rule**. Bài toán không cần AI dự đoán hay tạo nội dung: các bước lấy dữ liệu xe và lọc trạm có quy tắc cố định với đúng/sai rõ ràng, còn nội dung tin nhắn chỉ dẫn bị giới hạn trong các lưu ý an toàn đã duyệt nên template là đủ. Phần cần cải thiện là tích hợp dữ liệu giữa 2 hệ thống, không phải khả năng hiểu hay sinh ngôn ngữ.
 
 ### 6.4. Hai câu hỏi của Google PAIR
 
-- Người dùng muốn **được hỗ trợ (augment)** hay **giao hẳn việc (automate)**? Bằng chứng:
-- AI sai kiểu nào tệ hơn, **báo nhầm** hay **bỏ sót**? Vì sao, và thiết kế đã xử lý thế nào:
+Không áp dụng vì nhóm chọn mức **Rule** (xem lý do ở mục 6.3).
 
 ---
 
@@ -312,11 +304,15 @@ Vì sao:
 
 **Tiêu chí đánh giá đầu ra của AI (3–5 tiêu chí):**
 
+Nhóm chọn mức Rule, nên các tiêu chí dưới đây chấm đầu ra của giải pháp Rule (danh sách trạm đề xuất và tin nhắn điền từ template) trước khi điều phối viên bấm gửi.
+
 | # | Tiêu chí | Đạt khi | Không đạt khi |
 |---:|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Trạm hợp lệ | Trạm chính và trạm dự phòng đều thuộc danh sách Xanh SM cho phép và nằm trong quãng đường xe còn đi được với mức pin hiện tại | Có trạm ngoài danh sách cho phép, hoặc xa hơn quãng đường còn đi được |
+| 2 | Còn trụ, đúng cổng | Tại thời điểm tra, mỗi trạm có ít nhất 1 trụ trống đúng loại cổng sạc của dòng xe | Trạm đang hết trụ, hoặc chỉ có trụ sai loại cổng |
+| 3 | Có trạm dự phòng | Luôn trả về 2 trạm khác nhau | Chỉ có 1 trạm, hoặc 2 trạm trùng nhau |
+| 4 | Tin nhắn đủ và đúng | Điền đủ địa chỉ trạm, khoảng cách và lưu ý an toàn đúng dòng xe; không còn ô trống trong template | Thiếu trường, sai dòng xe, hoặc còn ô chưa điền |
+| 5 | Kịp thời | Từ lúc mở ticket đến lúc tin nhắn sẵn sàng cho điều phối viên duyệt không quá 1 phút | Quá 1 phút, khiến tổng thời gian xử lý vượt target 5 phút |
 
 ---
 
