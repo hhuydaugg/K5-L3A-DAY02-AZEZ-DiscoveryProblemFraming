@@ -286,7 +286,7 @@ Không áp dụng vì nhóm chọn mức **Rule** (xem lý do ở mục 6.3).
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | Điều phối viên vận hành GSM, trong các ca tài xế Xanh SM báo pin dưới 5% và gọi về tổng đài vì không tự tìm được trạm phù hợp (kể cả khi đã có V-App). |
+| **Actor** | Điều phối viên vận hành GSM, trong các ca tài xế Xanh SM báo pin dưới 5% và gọi về tổng đài nhờ tìm trạm sạc phù hợp. Việc tài xế vẫn gọi tổng đài khi đã có V-App là giả định #1, chưa được xác nhận (xem rủi ro Value ở mục 8). |
 | **Quy trình** | Nhận cuộc gọi khẩn → tra GPS, % pin, dòng xe trên màn hình quản lý xe → mở app bản đồ trạm sạc, đối chiếu tìm trạm còn trụ trống → gõ tay tin nhắn chỉ dẫn và lưu ý an toàn → gửi cho tài xế và theo dõi xe. Cả 5 bước đều thủ công và dùng 2 hệ thống không liên thông. |
 | **Bottleneck** | Bước tra trạm còn trụ trống mất 5–6 phút, vì phải đối chiếu thủ công giữa màn hình quản lý xe và app bản đồ trạm sạc. Bước gõ tay tin nhắn chỉ dẫn mất thêm 3–4 phút và dễ sót thông tin theo dòng xe. |
 | **Impact** | Mỗi ca mất 14–17 phút, trong đó 2 bottleneck chiếm 8–10 phút, khi xe đang ở mức pin rất thấp. Với 3–4 ca mỗi ca trực giờ cao điểm, điều phối viên mất khoảng 42–68 phút/ca trực cho các tình huống này (số liệu từ phỏng vấn 1 điều phối viên). |
@@ -300,7 +300,7 @@ Không áp dụng vì nhóm chọn mức **Rule** (xem lý do ở mục 6.3).
 
 | Trường | v0 | v1 | Vì sao đổi |
 |---|---|---|---|
-| Actor | Ghi giả định "tài xế thường gọi điều phối khi pin < 5%" là việc cần kiểm ở CP4 | Nêu thẳng phạm vi: các ca tài xế gọi về tổng đài vì không tự tìm được trạm | Phản biện #1: CP4 đã xong, Actor không nên còn ghi chú "cần kiểm" |
+| Actor | Ghi giả định "tài xế thường gọi điều phối khi pin < 5%" là việc cần kiểm ở CP4 | Nêu phạm vi là các ca tài xế gọi về tổng đài nhờ tìm trạm; ghi rõ giả định #1 chưa được xác nhận và trỏ sang rủi ro Value ở mục 8 | Phản biện #1: Actor không nên ghi việc kiểm chứng như một việc còn dở của CP4. Giả định chưa xác nhận được nêu thẳng, khớp với đánh giá rủi ro Value và quyết định Not Yet |
 | Quy trình | Có bước "chọn trạm có thể tiếp cận và phương án dự phòng" và đoạn research về V-App | Chỉ mô tả 5 bước hiện tại, đúng như mục 4.1 | Phản biện #2 và #4: "phương án dự phòng" là giải pháp; research đã có ở mục 3.3 |
 | Bottleneck | Đoạn dài, gộp cả ghi chú về độ tin cậy số liệu | 2 câu: bottleneck chính và phụ, kèm số phút và nguyên nhân | Phản biện #5: rút gọn để đọc nhanh |
 | Impact | Đoạn dài, có câu về rủi ro chưa định lượng | 2 câu: phút mỗi ca, phút mỗi ca trực, nguồn số liệu | Phản biện #5 |
