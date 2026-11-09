@@ -135,7 +135,7 @@ Tổng hợp:
 - Nếu phỏng vấn cho thấy tài xế tự dùng V-App mà không gọi tổng đài, actor "điều phối viên" cần được thu hẹp, ví dụ chỉ còn các ca tài xế không tự xử lý được.
 - Cứu hộ sạc lưu động của VinFast là phương án quay về sẵn có khi xe không tới được trạm.
 
-*Link trang cứu hộ của VinFast trong báo cáo của Tùng (vinfastauto.com/vn_vi/dich-vu-cuu-ho-xe-dien-vinfast-247) trả về lỗi 403 khi kiểm tự động; cần mở bằng trình duyệt để xác nhận trước khi dùng.*
+*Link trang cứu hộ của VinFast trong báo cáo của Tùng (vinfastauto.com/vn_vi/dich-vu-cuu-ho-xe-dien-vinfast-247) mở bằng trình duyệt ra trang "Page not found" (404). Trang thay thế còn hoạt động: [FAQ chính sách hậu mãi ô tô điện VinFast](https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai), nêu cứu hộ 24/7 qua 1900 23 23 89 và dịch vụ cứu hộ pin khi xe hết pin giữa đường.*
 
 ---
 
@@ -220,12 +220,17 @@ flowchart LR
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | |
-| **Quy trình** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** (baseline → target, cách đo) | |
-| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | |
+| **Actor** | **Điều phối viên vận hành GSM** xử lý các ca tài xế Xanh SM báo mức pin khẩn cấp (**< 5%**) và cần hỗ trợ tìm phương án sạc an toàn. Phạm vi v0 tập trung vào những ca tài xế **đã liên hệ điều phối viên / không tự xử lý được bằng V-App**; giả định “tài xế thường gọi điều phối khi pin < 5%” vẫn cần kiểm thêm ở CP4. |
+| **Quy trình** | Nhận cuộc gọi khẩn → xác minh biển số, GPS, % pin và dòng xe → đối chiếu thông tin trạm sạc phù hợp → chọn trạm có thể tiếp cận và phương án dự phòng → soạn chỉ dẫn an toàn → gửi cho tài xế và tiếp tục theo dõi. Research cho thấy V-App đã hỗ trợ tài xế gợi ý điểm sạc theo tuyến và theo dõi tình trạng các phiên sạc theo thời gian thực, nên vấn đề v0 không được mô tả là “không có dữ liệu trạm”, mà là **quy trình tra cứu/đối chiếu phía điều phối viên còn thủ công theo bằng chứng phỏng vấn hiện có**. |
+| **Bottleneck** | **Bottleneck chính:** bước đối chiếu GPS, mức pin và thông tin trạm sạc giữa các hệ thống mất khoảng **5–6 phút**. **Bottleneck phụ:** điều phối viên tự gõ tin nhắn chỉ dẫn mất thêm **3–4 phút**. Các số liệu này hiện mới dựa trên phỏng vấn một điều phối viên, vì vậy cần tiếp tục kiểm chứng với nhiều ca/người hơn trước khi coi là baseline đại diện. |
+| **Impact** | Theo dữ liệu phỏng vấn hiện có, một ca mất tổng cộng **14–17 phút**, trong đó riêng hai bottleneck chiếm **8–10 phút**. Nếu giả định tần suất **3–4 ca/ca trực giờ cao điểm** là đúng, điều phối viên có thể phải dành khoảng **42–68 phút/ca trực** cho các tình huống này. Tác động nghiệp vụ cần giảm là thời gian tài xế chờ hướng dẫn trong khi mức pin đang rất thấp; chưa có dữ liệu đủ để định lượng thêm rủi ro xe dừng hẳn giữa đường. |
+| **Success Metric** (baseline → target, cách đo) | **Metric chính:** thời gian từ lúc điều phối viên tiếp nhận ca đến khi gửi được chỉ dẫn đã kiểm tra cho tài xế: **14–17 phút → ≤ 5 phút/ca**. **Metric phụ:** (1) thời gian xác định trạm chính + trạm dự phòng **≤ 1 phút**; (2) **100%** chỉ dẫn phải được điều phối viên kiểm tra trước khi gửi; (3) không đề xuất trạm ngoài danh sách được phép hoặc phương án vượt ngoài tầm pin an toàn. **Cách đo:** dùng timestamp ở ticket/cuộc gọi và thời điểm gửi chỉ dẫn trong pilot, báo cáo median và P90 thay vì chỉ lấy trung bình. |
+| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | Hệ thống **không tự gửi** chỉ dẫn cho tài xế, **không tự gọi cứu hộ**, **không tự quyết định** cho xe tiếp tục di chuyển khi dữ liệu pin/trạm không chắc chắn, **không đề xuất trạm ngoài danh sách Xanh SM cho phép**, và **không tự sinh chỉ dẫn kỹ thuật/an toàn ngoài nội dung đã được phê duyệt**. Điều phối viên phải kiểm tra trạm, tầm pin và nội dung trước khi bấm gửi (**HITL**). Khi trạng thái trạm không khả dụng/không đáng tin hoặc xe không thể tiếp cận trạm an toàn, quay về quy trình thủ công và phương án cứu hộ đã có. VinFast hiện công bố cứu hộ 24/7; dịch vụ cứu hộ pin có điều kiện áp dụng cho tình huống pin rất thấp và không thể tiếp cận nguồn sạc phù hợp. |
+
+Nguồn research dùng để chốt v0:
+
+- Green SM, 21/05/2026 — V-App có “Gợi ý lộ trình sạc” và “Danh sách phiên sạc”; tài xế có thể xem trạm sạc trên tuyến, quãng đường/thời gian ước tính và theo dõi tình trạng các phiên sạc theo thời gian thực: https://www.greensm.com/vn-vi/news/ra-mat-tinh-nang-moi-goi-y-lo-trinh-sac-va-danh-sach-phien-sac-tren-ung-dung-v-app
+- VinFast — thông tin cứu hộ: cứu hộ 24/7 qua hotline 1900 23 23 89; FAQ hiện nêu dịch vụ cứu hộ pin cho tình huống xe hết/cạn pin và không thể tiếp cận nguồn sạc phù hợp: https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai
 
 Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
 
