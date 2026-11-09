@@ -66,6 +66,34 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 
 -
 
+### TranThanhTung-2A202603418
+
+**Phần việc phụ trách:**
+
+- Đề xuất bài toán taxi điện Xanh SM cạn pin khẩn cấp (< 5%) ở CP2 và bảo vệ luận điểm trong buổi pitch nhóm (CP3).
+- Phụ trách ghi chép phần hội tụ nhóm ở CP3: tổng hợp bảng pitch 12 candidate, phân loại 4 cluster, cây Opportunity Solution Tree (OST) và bảng chấm điểm 7 tiêu chí.
+- Đặt câu hỏi phản biện cho 3 bài của Hưng (bệnh án Vinmec, đăng ký chuyên khoa, nhắc uống thuốc) và trả lời phản biện của Tĩnh về rủi ro trạm sạc.
+- Tham gia thảo luận rủi ro và thống nhất quyết định Not Yet cùng cả nhóm (CP6).
+
+**Đóng góp cụ thể** (mình đã làm gì, ra sản phẩm gì):
+
+- Đóng góp bài toán candidate #10 được nhóm chấm điểm cao nhất (35/35) và chọn làm đề tài chung cho bài báo cáo nhóm.
+- Hoàn thành ghi chép và cấu trúc Mục 2 (CP3) trong `group_report.md`: bóc tách ranh giới giữa Opportunity và Solution, loại bỏ các giải pháp AI trá hình.
+- Cung cấp số liệu phỏng vấn điều phối viên ca trực (14–17 phút/ca, 2 bottleneck chính: tra trạm 5–6 phút, gõ tin 3–4 phút) và các tài liệu chính sách cứu hộ VinFast RSA 24/7 + hạ tầng V-Green.
+- Đóng góp vào việc điều chỉnh giải pháp: bổ sung trạm sạc dự phòng, giữ ranh giới an toàn Human-in-the-loop và thống nhất chuyển từ Workflow sang Rule.
+
+**Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
+
+- `group_report.md` mục 2.1 (bảng pitch #10, câu hỏi chất vấn Hưng và câu hỏi nhận từ Tĩnh): commit `097e714`, `d6da0bf`.
+- `group_report.md` mục 2.2 (cluster A), mục 2.3 (cây OST) và mục 2.4 (chấm điểm shortlist): commit `d6da0bf`, `decd794`.
+- Báo cáo cá nhân `report/individual/2A202603418_TranThanhTung.md`.
+
+**Điều mình học được từ phần nhóm:**
+
+- Nhận ra rằng bài toán hay nhất không nhất thiết phải dùng công nghệ phức tạp nhất (như AI Agent). Trong môi trường vận hành an toàn giao thông của xe taxi điện, một giải pháp Rule định sẵn kết hợp con người duyệt (Human-in-the-loop) lại hiệu quả, minh bạch và an toàn hơn nhiều so với để AI tự do sinh câu từ.
+- Học được cách cả nhóm dũng cảm ra quyết định **Not Yet** thay vì vội vàng Go, khi nhận thấy giả định cốt lõi (tài xế có gọi về tổng đài hay tự tra trên V-App) chưa được kiểm chứng đầy đủ trên người dùng thực tế.
+
+
 ### HoVaTen-MSSV
 
 **Phần việc phụ trách:**
