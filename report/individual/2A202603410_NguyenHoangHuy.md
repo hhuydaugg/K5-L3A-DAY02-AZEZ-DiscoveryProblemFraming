@@ -162,12 +162,12 @@ Tôi đưa 3 card cho AI đóng vai "PM hoài nghi" theo prompt trong worksheet.
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
-| CP2 Problem Card | | | | |
-| CP4 Research | | | | |
-| CP5 Quy trình | | | | |
-| CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
+| CP1 Scan | Tìm nguồn công khai làm dấu hiệu thật cho các problem Vingroup lấy từ bài scan codelab 2, rồi viết lại thành Job Story | Tìm được nguồn có số liệu cụ thể: quy định trạm sạc của Xanh SM, phí đỗ quá giờ 1.000 đ/phút, xếp hàng mua vé 30–45 phút, thông báo bảo trì VinWonders | Gán claim "đội xe 5.600 chiếc, sạc 5–6 tiếng" và "trụ sạc quá tải giờ nghỉ trưa" cho bài SGGP, nhưng mở ra không có; ghi thông báo dừng cáp treo là của VinWonders Nam Hội An, thực tế là Vinpearl Nha Trang | Chỉ giữ claim đã thấy trong nguồn khi mở link; đổi sang đúng nguồn (VnReview đăng lại Znews, thông báo Vinpearl Nha Trang); bỏ claim giờ nghỉ trưa; bỏ 2 đề VinFast và Vinpearl vì không tìm được dấu hiệu thật |
+| CP2 Problem Card | Soạn nháp 3 Problem Card và quy trình nháp từ các problem đã chọn, rồi cho AI đóng vai "PM hoài nghi" phản biện | Chỉ ra baseline của card #1 là phỏng đoán, nguồn 2023–2024 có thể đã cũ, và hiển thị trụ trống bằng Rule có thể đủ | Phần lớn số phút trong quy trình nháp là ước tính, không có nguồn | Ghi rõ "ước tính" ở mọi số phút không có nguồn; đổi cảm nhận của card #1 từ Workflow sang Rule; xếp card #3 hạng 3 vì phí đỗ quá giờ có thể chưa đủ đau |
+| CP4 Research | Tìm 2–3 giải pháp đã có cho bài taxi điện cạn pin (V-App, cứu hộ VinFast, Google Maps, Samsara) và kiểm từng link | Phát hiện V-App đã cho tài xế tự tìm trạm và theo dõi tình trạng trụ, làm lộ ra giả định #1 là rủi ro lớn nhất | Nguồn về Samsara chặn truy cập nên không kiểm được nội dung; link cứu hộ VinFast cũ (vinfastauto.com/vn_vi/dich-vu-cuu-ho-xe-dien-vinfast-247) đã chết (404) | Bỏ Samsara khỏi bảng research; thay link VinFast bằng trang FAQ chính sách hậu mãi, mở bằng trình duyệt để xác nhận nội dung |
+| CP5 Quy trình | Chuyển quy trình card #10 thành sơ đồ Mermaid, bảng actor/input/output/thời gian, và nháp quy trình tương lai | Nhanh, đủ các trường rubric yêu cầu (bước con người kiểm tra, boundary, phương án quay về, bảng before/after) | Để bước 4 (soạn tin chỉ dẫn) mơ hồ là "Rule hoặc AI"; số phút của quy trình tương lai là ước tính | Chốt bước 4 là Rule sau khi so sánh 4 mức ở CP6; ghi rõ số phút tương lai là ước tính, sẽ đo khi pilot |
+| CP5–6 Problem Statement | Nhờ AI phản biện Problem Statement v0, chỉ chỉ ra lỗ hổng, không viết lại | Chỉ ra 5 điểm: giải pháp lọt vào (trạm dự phòng, metric "≤ 1 phút"), metric chỉ đo tốc độ, research lẫn vào các trường, các trường quá dài | AI không biết kết quả phỏng vấn thật nên không đánh giá được Actor đúng hay sai | Nhóm sửa ở v1: thêm metric kết quả, bỏ metric "≤ 1 phút", chuyển 2 metric phụ sang Boundary, rút gọn các trường |
+| CP6 Mức can thiệp / quyết định | Nháp ma trận độ mơ hồ × độ phức tạp, bảng so sánh 4 mức; nhờ AI phản biện v1 và mục quyết định | Chỉ ra Boundary chỉ cho dùng nội dung đã duyệt nên template là đủ; chỉ ra Actor v1 mâu thuẫn với rủi ro Value | Bảng 4 mức ban đầu để ngỏ cả Rule lẫn Workflow, không tự kết luận | Nhóm chọn Rule; sửa Actor v1 bỏ cụm "kể cả khi đã có V-App" để khớp với rủi ro Value Cao và quyết định Not Yet |
 
 ---
 
