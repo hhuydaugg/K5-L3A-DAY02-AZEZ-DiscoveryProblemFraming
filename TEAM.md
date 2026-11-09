@@ -4,18 +4,18 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Candidate problem nhóm chọn (1 câu):
-- Quyết định cuối (Go / Not Yet / No-Go):
+- Tên nhóm: AZEZ
+- Candidate problem nhóm chọn (1 câu): Hỗ trợ điều phối viên vận hành GSM tra cứu trạm sạc còn trụ trống và gửi chỉ dẫn an toàn khi xe taxi điện Xanh SM báo pin dưới 5%.
+- Quyết định cuối (Go / Not Yet / No-Go): Not Yet
 
 ## Thành viên
 
 | STT | Họ và tên | MSSV | Vai trò trong nhóm | Tài khoản GitHub |
 |---:|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
+| 1 | Nguyễn Hoàng Huy | 2A202603410 | Nhóm trưởng (fork và quản lý repo) | hhuydaugg |
+| 2 | Nguyễn Công Tĩnh | 2A202603373 | | congtinhx |
+| 3 | Nguyễn Việt Hưng | 2A202603411 | | robinnguyen2004 |
+| 4 | Trần Thanh Tùng | 2A202603418 | | tungtran306 |
 
 Không ghi email hay số điện thoại vào bảng này, vì repo có thể để public.
 
