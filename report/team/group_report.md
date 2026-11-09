@@ -61,7 +61,7 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 | Candidate | Actor rõ | Quy trình rõ | Pain có bằng chứng | Impact đo được | Vừa sức lab | So sánh được No AI/Rule/Workflow/Agent | Nhóm hiểu domain | Tổng |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| **1. Taxi điện cạn pin khẩn cấp (#10)** | 5 | 5 | 5 | 5 | 5 | 5 | 5 | **35** |
+| **1. Taxi điện cạn pin khẩn cấp (#10)** | 5 | 5 | 4 | 5 | 5 | 5 | 5 | **34** |
 | **2. Phân loại phản hồi CSKH (#4)** | 4 | 4 | 3 | 3 | 4 | 4 | 4 | **26** |
 | **3. Ghi chép bệnh án lâm sàng Vinmec (#7)** | 4 | 3 | 4 | 3 | 2 | 3 | 3 | **22** |
 
