@@ -110,8 +110,8 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 
 **Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
 - Báo cáo cá nhân `report/individual/2A202603411_NguyenVietHung.md`
-- `group_report.md` mục 2.1 (bảng pitch #10, câu hỏi chất vấn Nguyễn Hoàng Huy và câu hỏi nhận từ Thanh Tùng): commit `097e714`, `d6da0bf`.
-- `group_report.md` mục 2.2 (cluster A), mục 2.3 (cây OST) và mục 2.4 (chấm điểm shortlist): commit `d6da0bf`, `decd794`.
+- `group_report.md` mục 2.1 (bảng pitch #10, câu hỏi chất vấn Nguyễn Hoàng Huy và câu hỏi nhận từ Thanh Tùng): commit `e8634de`.
+- Tham gia thảo luận các mục từ 3 đến 8 cùng team để chốt quy trình và đánh giá rủi ro.
 
 **Điều mình học được từ phần nhóm:**
 - Hiểu sâu sắc rằng việc giải quyết bài toán không phải lúc nào cũng cần đến AI phức tạp; việc nhận diện chính xác bottleneck và chọn mức can thiệp phù hợp (như Rule-based) vừa tiết kiệm chi phí, vừa đảm bảo an toàn tuyệt đối cho quy trình vận hành khẩn cấp.
