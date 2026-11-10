@@ -110,7 +110,7 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 
 **Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
 - Báo cáo cá nhân `report/individual/2A202603411_NguyenVietHung.md`
-- `group_report.md` mục 2.1 (bảng pitch #10, câu hỏi chất vấn Nguyễn Hoàng Huy và câu hỏi nhận từ Thanh Tùng): commit `e8634de`.
+- `group_report.md` mục 2.1 (bảng pitch #10, câu hỏi chất vấn Nguyễn Hoàng Huy và câu hỏi nhận từ Thanh Tùng): commit `e8634de`, `960cde3`.
 - Tham gia thảo luận các mục từ 3 đến 8 cùng team để chốt quy trình và đánh giá rủi ro.
 
 **Điều mình học được từ phần nhóm:**
